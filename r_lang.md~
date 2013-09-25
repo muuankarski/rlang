@@ -9,11 +9,6 @@ pandoc r_lang.md -o r_lang.pdf --toc --number-section
 
 # Open Research Methods in general
 
-Open research methods have not received the 
-
-
-Open research methods are referred as  of a wider open science discussion.
-
 
 # What is R? - Origin and characteristics
 
@@ -29,7 +24,7 @@ Open research methods are referred as  of a wider open science discussion.
 ## R-language as a tools for statistical computing
 - structure
 - visual
-- open source, community, licensing, teaching
+- open soucer, community, licensing, teaching
 
 ## Popularity of R-language
 - enterprise level services
@@ -69,7 +64,7 @@ Why R-language is popular
 
 ## Business/enterprise analytics
 - insurance, big data, banking, industry
-- social media: facebook, google, twitter
+- social media, facebook, google, twitter
 
 ## Data journalism
 - Guardian, New York Times, Chicago Herald Tribune
@@ -85,4 +80,3 @@ Why R-language is popular
 ## Clustering
 
 ## 
-

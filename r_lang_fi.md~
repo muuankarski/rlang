@@ -1,13 +1,13 @@
-% R-language for statistical computing and visualization
+% R-kieli tilastollisessa laskennassa ja visualisoinnissa
 % Markus Kainu
-% September 2013
+% Syyskuu 2013
 
 <!--
 cd ~/workspace/openscience/digihist
 pandoc r_lang.md -o r_lang.pdf --toc --number-section
 -->
 
-# Open Research Methods in general
+# Avoimet tutkimusmenetelmät yleisesti
 
 Open research methods have not received the 
 
@@ -15,74 +15,74 @@ Open research methods have not received the
 Open research methods are referred as  of a wider open science discussion.
 
 
-# What is R? - Origin and characteristics
+# Mikä on R? - Synty ja ominaispiirteet
 
-## Origin
+## Synty
 - R-language was iniated by two 
 - open source
 
-## R-language as a programming language
+## R-kieli ohjelmointikielenä
 - object oriented, s-language bell laboratories
 (G)UI's, IDE Rstudio, 
 - contributed packages
 
-## R-language as a tools for statistical computing
+## R-kieli tilastollisen laskennan työkaluna
 - structure
 - visual
 - open source, community, licensing, teaching
 
-## Popularity of R-language
+## R-kielen suosio
 - enterprise level services
 
-# Who makes the R possible? -  R-project
+# Miten R on mahdollinen? -  R-projekti
 
-## Organisation of the project
+## Projektin organisaatio
 - development vs. user help
 
-## Development of the language
+## Kielen kehitys
 
-## User support
+## Käyttäjätuki
 - mailing lists - general vs. special interest groups
 blogs
 - q & a sites
 
-## Contributed packages
+## Kontribuoidut paketit
 - CRAN - task views
 R-forge
 - Github
 - bioconductor
 
-# What is R used for? - R in action
+# Mihin R-kieltä käytetään? - R käytännön työssä
 Why R-language is popular
 
-## Development of statistical methods
+## Tilastollisten menetelmien kehitys
 - new methods implemented first in R
 
-## Applied statistics
+## Soveltava tilastotiede
 
-### Bio/geo-sciences
+### Bio/geo-tieteet
 - Geograhical Information Systems
 
-### Social sciences/economics
+### Yhteiskuntatieteet
 
-### Humanities - analysis of natural languages
+### Humanistiset tieteet - ihmiskielten analyysi
 
-## Business/enterprise analytics
+## Yritysanalytiikka
 - insurance, big data, banking, industry
 - social media: facebook, google, twitter
 
-## Data journalism
+## Datajournalismi
 - Guardian, New York Times, Chicago Herald Tribune
 
-# How does it work? - Visualising data in humanities using R-language
+# Miten  R toimii käytännössä? - Yhteiskuntatieteellisten aineistojen analyysi R-kielellä.
 
-## Word clouds
+## Sanapilvet
 
-## Networks maps
+## Verkostokartat
 
-## Spatial visualisation
+## Spatiaalinen visualisointi
 
-## Clustering
+## Klusterointi
 
 ## 
 
