@@ -9,7 +9,11 @@ pandoc r_lang.md -o r_lang.pdf --toc --number-section
 
 # Avoimet tutkimusmenetelmät yleisesti
 
-Open research methods have not received the 
+Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) piirissä on ollut vähäistä. Keskeisin syy lienee se, että valtaosassa YHT-tutkimuksesta ei käytetä laskennallisia menetelmiä, joissa jonkin tietyn ohjelmiston rooli olisi merkittävä. Kenties moni ei ole tullut edes ajatelleeksi tilannetta jossa *diskurssianalyysin* käyttäminen velvoittaisi tiukkojen lisenssiehtojen hyväksymistä ja rahallisen maksun suorittamista. Toisaalta määrällisessä tutkimuksessa analyysiohjelmistojen valintaa ovat ohjanneet muut seikat (perinteet, tuttuus) jolloin analyysiohjelmistojen monipuolista vertailua ei olla nähty tarpeelliseksi. 
+
+
+
+valtaosalle YHT-kentän tieteille *suljetun tutkimusmenetelmän* käsite on
 
 
 Open research methods are referred as  of a wider open science discussion.

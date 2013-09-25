@@ -3,7 +3,7 @@ cd ~/workspace/openscience/digihist
 
 git add .
 
-commit -a -m "file in finnish"
+commit -a -m "commit message"
 
 git log -p
 

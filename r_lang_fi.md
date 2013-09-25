@@ -9,10 +9,10 @@ pandoc r_lang.md -o r_lang.pdf --toc --number-section
 
 # Avoimet tutkimusmenetelmät yleisesti
 
-Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) 
+Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) piirissä on ollut vähäistä. Keskeisin syy lienee se, että valtaosassa YHT-tutkimuksesta on *laadullista*, jossa ei käytetä laskennallisia menetelmiä, joissa tietyn ohjelmiston rooli olisi merkittävä. Ajatus siitä että *diskurssianalyysin* käyttäminen velvoittaisi tiukkojen lisenssiehtojen hyväksymistä ja rahallisen maksun suorittamista on varmasti monelle vieras. Toisaalta määrällisessä tutkimuksessa analyysiohjelmistojen valintaa ovat ohjanneet muut seikat (perinteet, tuttuus) jolloin analyysiohjelmistojen monipuolista vertailua ei olla nähty tarpeelliseksi. Joka tapauksessa 1) avointen tutkimusmenetelmien kehittymisen sekä 2) laskennallisen analyysin YHT-tieteiden sovellusmahdollisuuksien lisääntymisen myötä on tutkimusmenetelmän avoimuuden käsite tulossa yhä tärkeämmäksi.
 
+Yksi kappale siitä miten menetelmät ovat kehittyneet ja mitä tarkoittaa sovellusalojen lisääntyminen
 
-Open research methods are referred as  of a wider open science discussion.
 
 
 # Mikä on R? - Synty ja ominaispiirteet
