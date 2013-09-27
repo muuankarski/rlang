@@ -1,5 +1,5 @@
 ---
-title:  'R-kieli tilastollisessa laskennassa ja visualisoinnissa'
+title:  'R-kieli tilastollisessa laskennassa ja visualisoinnissa - test'
 author: Markus Kainu
 date: Syyskuu 2013
 affiliation: Turun yliopisto
@@ -20,7 +20,6 @@ Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja hum
 Avointen laskennallisten analyysimenetelmien kehityksen arvioiminen on vaikeaa, mutta tämän tekstin toisessa luvussa tähän paneudutaan hieman tarkemmin juuri R-kielen osalta. Joka tapauksessa avoimen koodin ympärille rakentuneet projektit ovat tulleet yhä paremmin näkyville. Ehkä tunnetuin avoimeen lähdekoodin pohjautuvat projekti on *Android*-käyttöjärjestelmä mobiililaiteille, joka käyttää [linux-ydintä](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Linux), on [avoimesti lisensointu](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Licensing), ja josta on lyhyessä ajassa tullut [mobiilikäyttöjärjestelmien markkinajohtaja](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Market_share_and_rate_of_adoption).
 
 Laskennallisen analyysin soveltamismahdollisuudet YHT-tutkimuksessa ovat lisääntyneet aineistojen digitalisoitumisen kautta. @manovich_software_2013 [p. 22-23] sanoo että 
-
 
 **Steve Lohr kirjoittaa** New York Timesin artikkelissa *Dickens, Austen and Twain, Through a Digital Lens* [@lohr_literary_2013] Matther L. Jockersin tulevan kirjan *Macroanalysis: Digital Methods and Literary History*  [[@jockers_macroanalysis_2013]](http://zenhabits.net/) sisällöstä seuraavasti:
 
