@@ -1,5 +1,5 @@
 ---
-title:  'R-kieli tilastollisessa laskennassa ja visualisoinnissa - test'
+title:  'Avoimet tutkimusmenetelmät yhteiskunta- ja humanistisissa tieteissä: R-kieli laskennallisen analyysin työkaluna'
 author: Markus Kainu
 date: Syyskuu 2013
 affiliation: Turun yliopisto
@@ -8,6 +8,7 @@ bibliography: bibtex.bib
 abstract: |
 Tietotekniikan ja tietoverkkojen merkitys ihmisille kasvaa vuosi vuodelta. Yhteiskuntatieteiden näkökulmasta muutoksen voi tiivistää kahteen seikkaan: sähköisen aineiston rajuun kasvuun sekä akateemisen julkaisu- ja kustannustoiminnan murrokseen. Tässä esseessä väitän että tutkijalle murros on ennen kaikkea mahdollisuus, mutta vaatii toteutuakseen kriittisyyttä nykyisiä käytäntöjä kohtaan sekä tietoteknistä uteliaisuutta. Essee on temaattinen johdanto metodologiseen artikkeliin, jossa tulen käsittelemään datan louhintamenetelmien sovelluksia venäläisen avoimen datan sosiaalipoliittisessa analyysissä.
 lang: finnish
+tags: [R-kieli, avoin tiede, kvantitatiivinen tutkimus]
 ...
 
 # Avoimet tutkimusmenetelmät yleisesti
@@ -15,27 +16,59 @@ lang: finnish
 <link href="http://markuskainu.fi/material/css/article.css" rel="stylesheet" type="text/css" title="compact"></link>
 
 
-Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) piirissä on ollut vähäistä. Keskeisin syy lienee se, että valtaosassa YHT-tutkimuksesta on *laadullista*, jossa ei käytetä laskennallisia menetelmiä, joissa tietyn ohjelmiston rooli olisi merkittävä. Ajatus siitä että *diskurssianalyysin* käyttäminen velvoittaisi tiukkojen lisenssiehtojen hyväksymistä ja rahallisen maksun suorittamista on varmasti monelle vieras. Toisaalta määrällisessä tutkimuksessa analyysiohjelmistojen valintaa ovat ohjanneet muut seikat (perinteet, tuttuus) jolloin analyysiohjelmistojen monipuolista vertailua ei olla nähty tarpeelliseksi. Joka tapauksessa 1) avointen tutkimusmenetelmien kehittymisen sekä 2) laskennallisen analyysin YHT-tieteiden sovellusmahdollisuuksien lisääntymisen myötä on tutkimusmenetelmän avoimuuden käsite tulossa yhä tärkeämmäksi.
+Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) piirissä on ollut vähäistä. Keskeisin syy lienee se, että valtaosassa YHT-tutkimuksesta on *laadullista*, jossa ei käytetä laskennallisia menetelmiä, joissa tietyn ohjelmiston rooli olisi merkittävä. Ajatus siitä että *diskurssianalyysin* käyttäminen velvoittaisi tiukkojen lisenssiehtojen hyväksymistä ja rahallisen maksun suorittamista on varmasti monelle vieras. Toisaalta määrällisessä tutkimuksessa analyysiohjelmistojen valintaa ovat ohjanneet muut seikat (perinteet, tuttuus) jolloin käytetyn ja opetetun analyysikielen valinnan eri ulottuvuuksia ja pitkäaikaisia vaikutuksia ei olla arvioitu. Joka tapauksessa 1) laskennallisen analyysin YHT-tieteellisten sovellusmahdollisuuksien lisääntymisen sekä 2) avointen analyysimenetelmien kehittymisen myötä on tutkimusmenetelmien avoimuus on nousemassa yhä tärkeämmäksi puheenaiheeksi.
 
-Avointen laskennallisten analyysimenetelmien kehityksen arvioiminen on vaikeaa, mutta tämän tekstin toisessa luvussa tähän paneudutaan hieman tarkemmin juuri R-kielen osalta. Joka tapauksessa avoimen koodin ympärille rakentuneet projektit ovat tulleet yhä paremmin näkyville. Ehkä tunnetuin avoimeen lähdekoodin pohjautuvat projekti on *Android*-käyttöjärjestelmä mobiililaiteille, joka käyttää [linux-ydintä](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Linux), on [avoimesti lisensointu](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Licensing), ja josta on lyhyessä ajassa tullut [mobiilikäyttöjärjestelmien markkinajohtaja](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Market_share_and_rate_of_adoption).
+## Avoimen koodin kehittyminen
 
-Laskennallisen analyysin soveltamismahdollisuudet YHT-tutkimuksessa ovat lisääntyneet aineistojen digitalisoitumisen kautta. @manovich_software_2013 [p. 22-23] sanoo että 
+Avoimilla tutkimusmenetelmillä tarkoitetaan laskennallisia ohjelmointikieliä, joiden on lähdekoodi on avointa ja jotka on lisensointu vapaasti. Vapaan ja avoimen lähdekoodin ohjelmistokehityksen ideana on yksinkertaisesti se että kuka tahansa voi muokata lähdekoodia haluamallaan tavalla sekä kopioida ja levittää sekä alkuperäistä että muokattua versiota ja käyttää ohjelmaa mihin tahansa tarkoitukseen [@wiki_avoin_2013]. 
 
-**Steve Lohr kirjoittaa** New York Timesin artikkelissa *Dickens, Austen and Twain, Through a Digital Lens* [@lohr_literary_2013] Matther L. Jockersin tulevan kirjan *Macroanalysis: Digital Methods and Literary History*  [[@jockers_macroanalysis_2013]](http://zenhabits.net/) sisällöstä seuraavasti:
+Avointen tutkimusmenetelmien kehityksen arvioiminen on vaikeaa. Menetelmien käytön yleisyys on yksi tapa, johon paneudutaan tekstin toisessa luvussa r-kielen osalta. Joka tapauksessa avoimen koodin ympärille rakentuneet projektit ovat tulleet yhä paremmin näkyville. Kenties tunnetuin avoimeen lähdekoodin pohjautuva projekti on mobiililaitteiden *Android*-käyttöjärjestelmä, joka käyttää [linux-ydintä](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Linux), on [avoimesti lisensointu](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Licensing), ja josta on lyhyessä ajassa tullut [mobiilikäyttöjärjestelmien markkinajohtaja](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Market_share_and_rate_of_adoption). Avoimeen lähdekoodiin perustuvat myös internet-palvelimissa suositut linux-käyttöjärjestelmät, samoin kuin niille talletettua tietoa hallinnoivat tietokantaohjelmat (MySql,MariaDB). Nopeasti yleistyvät julkaisujärjestelmät, kuten wordpress, drupal, tai joomla ovat myös suosittuja ja tavalliselle käyttäjälle tuttuja avoimen lähdekoodin projekteja. Tieteellisessä tutkimuksessa avoin lähdekoodin on ollut jo pitkään valtavirtaa. Yli [95 % maailman supertietokoneista toimii linux-käyttöjärjestelmällä](http://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Supercomputers), *joku esimerkki geotieteistä* ja *esimerkki lääketieteestä*. Tilastollisen analyysin 
 
-> These findings are hardly the last word. At this stage, this kind of digital analysis is mostly an intriguing sign that Big Data technology is steadily pushing beyond the Internet industry and scientific research into seemingly foreign fields like the social sciences and the humanities. The new tools of discovery provide a fresh look at culture, much as the microscope gave us a closer look at the subtleties of life and the telescope opened the way to faraway galaxies. 
+Yhteiskuntatieteissä kuitenkin luotetaan edelleen siihen että kaupalliset ohjelmistoratkaisut (esim. Stata,SPSS,SAS,Matlab, jne.) ovat paras tapa vastata muuttuvan yhteiskunnan ja muuttuvan yhteiskuntatieteen analyysitarpeisiin.
 
-Kirjassaan Jockers analysoi 3,592 vuosien 1780 - 1900 aikana englanniksi kirjoitettua novellia erilaisin data-analyysiä ja tilastollisia menetelmiä yhdistelevällä metodilla. Analyysi toi esiin uutta tietoa englanninkielisen kirjallisuuden kehityksestä mm.  vaikutteiden leviämisen sekä yksittäisten kirjailijoiden merkityksen näkökulmasta.
+## Laskennallisen analyysin sovellusmahdollisuuksien lisääntyminen
 
-Kirjojen digitalisointi ja kaiken kattavien kirjatietokantojen luominen on yksi esimerkki avoimen  sähköisen datan mahdollisuuksista menetelmällisesti varsin laadullisesti orientoituneella humanistisella tieteenalalla, kirjallisuudentutkimuksessa. Avoimen sähköisen datan nopean kasvu koskettaa kuitenkin likipitäen kaikkia tieteenaloja, mistä Lohr kirjoittaa seuraavasti:
+Laskennallisen analyysin soveltamismahdollisuudet YHT-tutkimuksessa ovat lisääntyneet aineistojen digitalisoitumisen kautta. New York Times [@lohr_literary_2013] käsittelin keväällä artikkelissaan *Dickens, Austen and Twain, Through a Digital Lens* Matthew L Jockersin tuoretta kirjaa *Macroanalysis
+Digital Methods and Literary History* [@jockers_macroanalysis_2013]. Kirjassaan Jockers analysoi 3592 vuosien 1780 - 1900 aikana englanniksi kirjoitettua novellia erilaisin data-analyysiä ja tilastollisia menetelmiä yhdistelevällä metodilla paljastaen kirjallisuuden kehityksestä mm.  vaikutteiden leviämisen sekä yksittäisten kirjailijoiden merkityksen näkökulmasta.
 
-> Data-centric specialties are growing fast, giving rise to a new vocabulary. In political science, this quantitative analysis is called political methodology. In history, there is cliometrics, which applies econometrics to history. In literature, stylometry is the study of an author’s writing style, and these days it leans heavily on computing and statistical analysis. Culturomics is the umbrella term used to describe rigorous quantitative inquiries in the social sciences and humanities. 
+Kirjojen digitalisointi ja kaiken kattavien kirjatietokantojen luominen on yksi esimerkki sähköisen datan mahdollisuuksista laadullisesti orientoituneella humanistisella tieteenalalla, kirjallisuudentutkimuksessa. Sähköisen datan nopea kasvu koskettaa kuitenkin likipitäen kaikkia tieteenaloja, mistä @lohr_literary_2013 kirjoittaa seuraavasti:
 
-**Tässä esseessä** käsittelen avointa sähköistä dataa yhteiskuntatieteellisen tutkimuksen näkökulmasta. Avoin data tai *big data* tarkoittaa tässä yhteydessä verrattain uutta sähköiseen muotoon kertyvää dataa, jota ei kerätä jotain tiettyä tutkimuskysymystä silmällä pitäen, vaan data ikäänkuin *kertyy* esimerkiksi dokumentaation tai teknisen sovelluksen keräämänä. Tyypillisinä esimerkkeinä aineistoista voidaan pitää mm. *sosiaalista mediaa* [esim. @king_how_2012], *vaalidataa* [esim. @louhos_2013], *poliittisen päätöksenteon dataa* [esim. @hetherington_how_2012] tai vaikkapa *rikollisuuteen ja oikeuslaitoksen toimintaan liittyvää dataa* [esim. @lipsky_racial_2012]. Kaikille näille tutkimuksille yhteistä on avoiminen tietovirtojen tietotekninen hyödyntäminen tieteenalan perinteisiin tutkimuskysymyksiin vastaamiseksi.
+<!--
+Data-centric specialties are growing fast, giving rise to a new vocabulary. In political science, this quantitative analysis is called political methodology. In history, there is cliometrics, which applies econometrics to history. In literature, stylometry is the study of an author’s writing style, and these days it leans heavily on computing and statistical analysis. Culturomics is the umbrella term used to describe rigorous quantitative inquiries in the social sciences and humanities. -->
+
+>Datakeskeiset tieteenalat kasvavat nopeasti vaatien uutta tieteellistä sanastoa. Politiikan tutkimuksessa määrillistä analyysiä kutsutaan politiikan metodologiaksi (political methodology). Historiassa puhutaan cliometriasta, joka soveltaa ekonometrisiä menetelmiä historian tutkimukseen. Kirjallisuustieteissä taas puhutaan *stylometriasta* (stylometry), jossa tutkimuksen kohteena on kirjailijan kirjoitustyyli ja jonka analytiikka nojaa nykyään pitkältä laskennalliseen ja tilastolliseen analyysiin. *Kulturometriasta* (culturometrics) puhutaan puolestaan sateenvarjokäsitteenä viitattaessa raskaisiin laskennallisiin menetelmiin yhteiskunta- ja humanistisissa tieteissä. 
+
+@lohr_literary_2013 jatkaa artikkelissaan tulevaisuuden visiointiaan olettaen että digitaaliset analyysimenetelmät tulevat leviämään internet-teollisuudesta ja luonnontieteistä yhä laajemmalle YHT-tutkimukseen.
+
+> Uudet löytämisen työkalut tarjoavat tuoreen näkökulman kulttuuriin; pitkälti samaan tapaan kuin miten mikroskooppi auttoi näkemään elämän hienorakenteet ja miten teleskoopit avasivat näkymät kaukaisiin galakseihin.
+
 
 Harvardin yliopiston [*Institute for Quantitative Social Science*](http://www.iq.harvard.edu/):n johtaja professori [Gary King](http://gking.harvard.edu/) korostaa tuoreessa artikkelissaan *Restructuring the Social Sciences: Reflections from Harvard’s Institute for Quantitative Social Science* [s. 3, @king_restructuring_2013] uuden avoimen datan merkitystä perinteiselle määrälliselle yhteiskuntatutkimukselle:
 
 > An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end of period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially, and are already many orders of magnitude more informative than ever before. 
+
+
+
+
+Terveyden ja hyvinvoinnin laitoksen tutkimusprofessori Jussi @simpura_nakymattomien_2012 kirjottaa Tiedepolitiikka lehdessä samasta aiheesta:
+
+>Näyttää siltä, että tietotekniikan kehittymisen seurauksena tietovarannot ovat räjähtämässä globaaliksi pilveksi ja että ketjureaktio on jo käynnissä. Se koskettaa yksittäisiä tietovarantoja ja pakottaa niitten kanssa työskenteleviä miettimään uusia toimintatapoja. Avoimen datan aalto etenee globaalin tietopilven tuntumassa. Suomessakin aalto on jo liikkeellä: vuonna 2012 avoimen datan edistämisen ja hyödyntämisen ympärillä on ollut tapahtumia lähes viikottain ja etenemisvauhti on kova. Avoimen datan pelisääntöjä rakenetaan tilanteessa, jossa avoimen datan aalto uhkaa edetä sääntelijöiden tavoittamattomiin. Tällä kaikella alkaa olla kiire, ja tiedemaailmankin on pysyttävä aallon harjalla.
+
+
+...Tilastollisen tutkimuksen käsitettä käytetään suomen kielessä usein melko laveasti. Tässä tekstissä puhutaan laskennallisesta analyysistä, joka nähdään koostuvan yhtäältä tietojenkäsittelytieteellisestä data-analyysistä että toisaalta tilastotieteellisestä data-analyysistä. Määrällisen tutkimusprosessin työmäärästä usein vain pieni osa on varsinaista tilastotieteellistä analyysiä ja suurin osa työstä kuluu datan keräämiseen sekä muokkaamiseen.
+
+Matthew L. Jonckers
+
+---
+
+
+@manovich_software_2013 [p. 22-23] sanoo että 
+
+
+
+**Tässä esseessä** käsittelen avointa sähköistä dataa yhteiskuntatieteellisen tutkimuksen näkökulmasta. Avoin data tai *big data* tarkoittaa tässä yhteydessä verrattain uutta sähköiseen muotoon kertyvää dataa, jota ei kerätä jotain tiettyä tutkimuskysymystä silmällä pitäen, vaan data ikäänkuin *kertyy* esimerkiksi dokumentaation tai teknisen sovelluksen keräämänä. Tyypillisinä esimerkkeinä aineistoista voidaan pitää mm. *sosiaalista mediaa* [esim. @king_how_2012], *vaalidataa* [esim. @louhos_2013], *poliittisen päätöksenteon dataa* [esim. @hetherington_how_2012] tai vaikkapa *rikollisuuteen ja oikeuslaitoksen toimintaan liittyvää dataa* [esim. @lipsky_racial_2012]. Kaikille näille tutkimuksille yhteistä on avoiminen tietovirtojen tietotekninen hyödyntäminen tieteenalan perinteisiin tutkimuskysymyksiin vastaamiseksi.
+
+
 
 **Suomalainen määrällinen yhteiskuntatutkimus** on edelleen vahvasti kiinni Kingin mainitsemissa *menneen puolivuosisadan* aineistoissa sekä menetelmissä. Menetelmällinen kehitys, sikäli kun sitä on ollut, on painottunut uusien *tilastollisten* menetelmien soveltamiseen aineistojen ja tutkimuskysymysten pysyttyä pitkälti ennallaan. Aineistojen osalta **viranomaisrekistereitä** on saatu tutkittavaksi yhä enemmän. Rekisteriaineistotutkimus on menetelmällisesti hyvin erityinen tutkimusala, jolla ei ole sovelluksia juuri pohjoismaita kauemmaksi.
 
