@@ -18,7 +18,7 @@ git rm  r_lang.pdf --cached
 ## suomeksi
 ### pdf
 cd ~/workspace/openscience/digihist
-~/.cabal/bin/pandoc r_lang_fi.md -o r_lang_fi.pdf --toc --number-section --filter ~/.cabal/bin/pandoc-citeproc
+~/.cabal/bin/pandoc r_lang_fi.md -o r_lang_fi.pdf --toc --number-section --filter ~/.cabal/bin/pandoc-citeproc --include-abstract
 
 ### html
 cd ~/workspace/openscience/digihist
@@ -27,7 +27,4 @@ cd ~/workspace/openscience/digihist
 ### epub
 cd ~/workspace/openscience/digihist
 ~/.cabal/bin/pandoc r_lang_fi.md -o r_lang_fi.epub --toc --number-section --filter ~/.cabal/bin/pandoc-citeproc
-
-
-
 

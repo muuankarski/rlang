@@ -1,199 +1,107 @@
 ---
-title:  'Avoimet tutkimusmenetelmät yhteiskunta- ja humanistisissa tieteissä: R-kieli laskennallisen analyysin työkaluna'
+title:  'Poverty, space and Russia - exploring the use of spatial analysis in Russian Federation'
 author: Markus Kainu
-date: Syyskuu 2013
-affiliation: Turun yliopisto
-tags: [r-kieli, avoin tiede]
+date: October 2013
+affiliation: University of turku
 bibliography: bibtex.bib
-abstract: |
-Tietotekniikan ja tietoverkkojen merkitys ihmisille kasvaa vuosi vuodelta. Yhteiskuntatieteiden näkökulmasta muutoksen voi tiivistää kahteen seikkaan: sähköisen aineiston rajuun kasvuun sekä akateemisen julkaisu- ja kustannustoiminnan murrokseen. Tässä esseessä väitän että tutkijalle murros on ennen kaikkea mahdollisuus, mutta vaatii toteutuakseen kriittisyyttä nykyisiä käytäntöjä kohtaan sekä tietoteknistä uteliaisuutta. Essee on temaattinen johdanto metodologiseen artikkeliin, jossa tulen käsittelemään datan louhintamenetelmien sovelluksia venäläisen avoimen datan sosiaalipoliittisessa analyysissä.
-lang: finnish
-tags: [R-kieli, avoin tiede, kvantitatiivinen tutkimus]
+abstract: 
+lang: english
+tags: [spatial analysis, Russia, census, poverty]
 ...
 
-# Avoimet tutkimusmenetelmät yleisesti
+
 
 <link href="http://markuskainu.fi/material/css/article.css" rel="stylesheet" type="text/css" title="compact"></link>
 
 
-Keskustelu tutkimusmenetelmien avoimuudesta on ollut yhteiskuntatieteiden ja humanististen tieteiden (YHT) piirissä on ollut vähäistä. Keskeisin syy lienee se, että valtaosassa YHT-tutkimuksesta on *laadullista*, jossa ei käytetä laskennallisia menetelmiä, joissa tietyn ohjelmiston rooli olisi merkittävä. Ajatus siitä että *diskurssianalyysin* käyttäminen velvoittaisi tiukkojen lisenssiehtojen hyväksymistä ja rahallisen maksun suorittamista on varmasti monelle vieras. Toisaalta määrällisessä tutkimuksessa analyysiohjelmistojen valintaa ovat ohjanneet muut seikat (perinteet, tuttuus) jolloin käytetyn ja opetetun analyysikielen valinnan eri ulottuvuuksia ja pitkäaikaisia vaikutuksia ei olla arvioitu. Joka tapauksessa 1) laskennallisen analyysin YHT-tieteellisten sovellusmahdollisuuksien lisääntymisen sekä 2) avointen analyysimenetelmien kehittymisen myötä on tutkimusmenetelmien avoimuus on nousemassa yhä tärkeämmäksi puheenaiheeksi.
 
-## Avoimen koodin kehittyminen
 
-Avoimilla tutkimusmenetelmillä tarkoitetaan laskennallisia ohjelmointikieliä, joiden on lähdekoodi on avointa ja jotka on lisensointu vapaasti. Vapaan ja avoimen lähdekoodin ohjelmistokehityksen ideana on yksinkertaisesti se että kuka tahansa voi muokata lähdekoodia haluamallaan tavalla sekä kopioida ja levittää sekä alkuperäistä että muokattua versiota ja käyttää ohjelmaa mihin tahansa tarkoitukseen [@wiki_avoin_2013]. 
 
-Avointen tutkimusmenetelmien kehityksen arvioiminen on vaikeaa. Menetelmien käytön yleisyys on yksi tapa, johon paneudutaan tekstin toisessa luvussa r-kielen osalta. Joka tapauksessa avoimen koodin ympärille rakentuneet projektit ovat tulleet yhä paremmin näkyville. Kenties tunnetuin avoimeen lähdekoodin pohjautuva projekti on mobiililaitteiden *Android*-käyttöjärjestelmä, joka käyttää [linux-ydintä](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Linux), on [avoimesti lisensointu](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Licensing), ja josta on lyhyessä ajassa tullut [mobiilikäyttöjärjestelmien markkinajohtaja](http://en.wikipedia.org/wiki/Android_%28operating_system%29#Market_share_and_rate_of_adoption). Avoimeen lähdekoodiin perustuvat myös internet-palvelimissa suositut linux-käyttöjärjestelmät, samoin kuin niille talletettua tietoa hallinnoivat tietokantaohjelmat (MySql,MariaDB). Nopeasti yleistyvät julkaisujärjestelmät, kuten wordpress, drupal, tai joomla ovat myös suosittuja ja tavalliselle käyttäjälle tuttuja avoimen lähdekoodin projekteja. Tieteellisessä tutkimuksessa avoin lähdekoodin on ollut jo pitkään valtavirtaa. Yli [95 % maailman supertietokoneista toimii linux-käyttöjärjestelmällä](http://en.wikipedia.org/wiki/Usage_share_of_operating_systems#Supercomputers), *joku esimerkki geotieteistä* ja *esimerkki lääketieteestä*. Tilastollisen analyysin 
+# Introduction to the topic
 
-Yhteiskuntatieteissä kuitenkin luotetaan edelleen siihen että kaupalliset ohjelmistoratkaisut (esim. Stata,SPSS,SAS,Matlab, jne.) ovat paras tapa vastata muuttuvan yhteiskunnan ja muuttuvan yhteiskuntatieteen analyysitarpeisiin.
+Regional economic disparities in European Union have received substantial scholarly attention in recent years. Focus has been either on descriptive analysis and methodology [@stewart_measuring_2002,@jesuit2008subnational,@heidenreich_patterns_2008;@beckfield2009remapping;@longford2010measures] or on links between regional disparities and economic growth. [@perugini2008income;@ezcurra_does_2009;@peters_regional_2010]. In terms of inequality studies are showing similar figures: among the countries of current European Union (EU) the between-country disparities have been falling over the last 20 years, while the regional inequalities within most of the countries have increased, especially within European post-socialist countries. As a result most of the economic inequalities today in enlarged EU are already inequalities within nations. 
 
-## Laskennallisen analyysin sovellusmahdollisuuksien lisääntyminen
+Levelling of these disparities has become an important goal for EU cohesion policies as stated in Article 158 in the Treaty of European Union: 
+>In particular, the Community shall aim at reducing disparities between the levels of development of the various regions and the backwardness of the least favoured regions or islands, including rural areas. [p. 118,@EU_treaty_2006]. 
 
-Laskennallisen analyysin soveltamismahdollisuudet YHT-tutkimuksessa ovat lisääntyneet aineistojen digitalisoitumisen kautta. New York Times [@lohr_literary_2013] käsittelin keväällä artikkelissaan *Dickens, Austen and Twain, Through a Digital Lens* Matthew L Jockersin tuoretta kirjaa *Macroanalysis
-Digital Methods and Literary History* [@jockers_macroanalysis_2013]. Kirjassaan Jockers analysoi 3592 vuosien 1780 - 1900 aikana englanniksi kirjoitettua novellia erilaisin data-analyysiä ja tilastollisia menetelmiä yhdistelevällä metodilla paljastaen kirjallisuuden kehityksestä mm.  vaikutteiden leviämisen sekä yksittäisten kirjailijoiden merkityksen näkökulmasta.
+Currently over 60 % of EU structural Fund budget is targeted to regions lagging behind the EU average in GDP per capita [p. 2,@longford2010measures]. Impact of these regional policies on disparities have been covered in various studies in terms of convergence of per capita income[@pittau2006empirical;@quah1996regional] but only among the countries of EU15. According to [p. 2,@longford2010measures] the income disparities across regions in EU15 countries have narrowed over time, but this trend cannot be equated with reduction of disparities within regions. 
 
-Kirjojen digitalisointi ja kaiken kattavien kirjatietokantojen luominen on yksi esimerkki sähköisen datan mahdollisuuksista laadullisesti orientoituneella humanistisella tieteenalalla, kirjallisuudentutkimuksessa. Sähköisen datan nopea kasvu koskettaa kuitenkin likipitäen kaikkia tieteenaloja, mistä @lohr_literary_2013 kirjoittaa seuraavasti:
+As the EU cohesion funds are targeted at the regional level on the basis of GDP per capita, can the analysis of disparities between regional averages be misleading and more attention should be paid on intra regional individual or household level variations. Nevertheless, according to [p. 541-542,@rynck2001cohesion] reduction of economic inequalities at the micro level is an implicit aim for European Comission. In addition to EU policies, there are also various national level policy instruments aiming either directly or indirectly for the same. State allocates resources directly through set of policies named *fiscal federalism* [see,@oates1977political], while subsidies on certain trades may have indirect redistributive effect, eg. EU agricultural subsidies [see,@hansen2007temporal]. Main policy instrument for reducing micro level income inequalities is income redistribution systems, which is in question in this seminar paper. And more precisely, this paper addresses the question, how single welfare programme, social assistance, reduces spatially varying poverty?
 
-<!--
-Data-centric specialties are growing fast, giving rise to a new vocabulary. In political science, this quantitative analysis is called political methodology. In history, there is cliometrics, which applies econometrics to history. In literature, stylometry is the study of an author’s writing style, and these days it leans heavily on computing and statistical analysis. Culturomics is the umbrella term used to describe rigorous quantitative inquiries in the social sciences and humanities. -->
+## Towards a spatial approach to poverty
 
->Datakeskeiset tieteenalat kasvavat nopeasti vaatien uutta tieteellistä sanastoa. Politiikan tutkimuksessa määrillistä analyysiä kutsutaan politiikan metodologiaksi (political methodology). Historiassa puhutaan cliometriasta, joka soveltaa ekonometrisiä menetelmiä historian tutkimukseen. Kirjallisuustieteissä taas puhutaan *stylometriasta* (stylometry), jossa tutkimuksen kohteena on kirjailijan kirjoitustyyli ja jonka analytiikka nojaa nykyään pitkältä laskennalliseen ja tilastolliseen analyysiin. *Kulturometriasta* (culturometrics) puhutaan puolestaan sateenvarjokäsitteenä viitattaessa raskaisiin laskennallisiin menetelmiin yhteiskunta- ja humanistisissa tieteissä. 
+Analysis of poverty in social policy depart of with an study of how characteristics of individual or families are connected with higher or lower risks of poverty. Such micro level explanations are found in most account of poverty. Less often, attention is given to how contexts - spatial or temporal, may affect the poverty risks. Temporal variation due to recession, changes in state policies and other fluctuations are given some attention in the literature and sometimes treated as major theoretical subjects [@gundersen2004poverty]. According to [@cotter2007placing] the territorial variation of economic production has been addressed less often, though recognized by both scholars and policy makers. Referring to [@tickamyer_space_2000] they claim that attention to spatial variation is especially important because of the substantial variation in economic structure and poverty policies across places, and which may widen over time [p. 164,cotter2007placing]. 
 
-@lohr_literary_2013 jatkaa artikkelissaan tulevaisuuden visiointiaan olettaen että digitaaliset analyysimenetelmät tulevat leviämään internet-teollisuudesta ja luonnontieteistä yhä laajemmalle YHT-tutkimukseen.
+[p. 3-5,@lobao2007advancing] elaborates the importance of scale of spatial analysis. Well-developed bodies of research on poverty and other inequalities are found mainly at two opposing scales: the city or local level and across the global system of nation-states, there in between is a *missing middle*, territorial, regional or subnational spatial scale. 
 
-> Uudet löytämisen työkalut tarjoavat tuoreen näkökulman kulttuuriin; pitkälti samaan tapaan kuin miten mikroskooppi auttoi näkemään elämän hienorakenteet ja miten teleskoopit avasivat näkymät kaukaisiin galakseihin.
+>Insofar as the sociological imagination has been drawn largely to cities and nation-states, we are left with disciplinary gaps: large swathe of places, people, and substantive topics are left out of systematic investigations because they do not fall into the usual categories by which sociologist carve up space. [p. 4,@lobao2007advancing]
 
+Spatial scale is important because it defines the territorial domain from which processes creating inequality arises. Also, it can be seen as the arena for targeting policy and political action.
 
-Harvardin yliopiston [*Institute for Quantitative Social Science*](http://www.iq.harvard.edu/):n johtaja professori [Gary King](http://gking.harvard.edu/) korostaa tuoreessa artikkelissaan *Restructuring the Social Sciences: Reflections from Harvard’s Institute for Quantitative Social Science* [s. 3, @king_restructuring_2013] uuden avoimen datan merkitystä perinteiselle määrälliselle yhteiskuntatutkimukselle:
+*Sociology  as a discipline began with a core interest in the relationship between space and social organisation* claims Michael [p. 86.,@irwin2007territories] and refers to early 20th century classics. He states that proliferation of Geographic Information Systems (GIS) software and release of census data and other geographically aggregated data and the development of spatial statistics has accelerated the territorially based analysis. Locating data about social conditions in place allows a wide range of (spatial) data to be linked with the analysis. Not only details on regional economy and job markets, but also about geographical conditions like distance or climate, access to services, infrastructure etc.
 
-> An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end of period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially, and are already many orders of magnitude more informative than ever before. 
+EU regional funding and state fiscal federalism are targeted primarily spatially, while social assistance is targeted socially. Spatial or geographical targeting is practised when the aim of intervention is defined in spatial terms as region, while social targeting when aim is defined in social terms as poverty. By nature, poverty can be seen both as social and spatial. Mechanisms creating poverty can be rooted both in socio-economical or in spatial structures of society. Various socio-economic factors as social class, age, gender, income level are often linked with variations in poverty, but less often is poverty is linked with spatial factors eg. regional economy or unemployment, access to education, health care or regional concentration of social factors(risks). 
 
+It may be claimed that spatial analysis of socially targeted policies as social assistance has no relevance as it is *social*, not *spatial* assistance. Among social benefits, social assistance has it's specific function in protection against poverty. And that is where rationality arises: as poverty is rooted in social structures it is also rooted in place, should social programs aimed at alleviating poverty analysed both, in terms of social and spatial effectiveness. Another question is, of course, whether social targeted benefit can alleviate spatial poverty?
 
+## Post-social transition and geographies of poverty
 
+Spatial emphasis of poverty in this paper is closely linked with post-socialist transition and dynamics of poverty during the last twenty years. The breakdown of socialist system had a dramatic effect on poverty and inequality in all of the countries. since the collapse of the Soviet Union the number of poor people increased from 14 million to nearly 150 million by the mid-1990. In the same period the countries with very equal income distribution experienced a dramatic rose in income inequality resulting in inequality levels similar to Latin American countries. [p. 67-71.@milanovic1998income].
 
-Terveyden ja hyvinvoinnin laitoksen tutkimusprofessori Jussi @simpura_nakymattomien_2012 kirjottaa Tiedepolitiikka lehdessä samasta aiheesta:
+As text for this chapter is not ready at the moment, there are two figures telling part of the story. Current regional economic disparities are plotted on a map in figure 1. The divide between West and East is clear (map A), as is the fact that many regions in Eastern Europe are catching up (map B). Map C portraits the regional extremes (50 poorest and wealthiest regions). Figure 1 is followed by figure 2 illustrating the regional variations in terms if income. maps A and B show disposable income, while map C presents the relative level of primary (market) income in relation to EU27 average. Map D sheds light into the redistribution of incomes and show share of disposable income of market incomes. The further away from green the region is the less there is redistribution within that nation state.
 
->Näyttää siltä, että tietotekniikan kehittymisen seurauksena tietovarannot ovat räjähtämässä globaaliksi pilveksi ja että ketjureaktio on jo käynnissä. Se koskettaa yksittäisiä tietovarantoja ja pakottaa niitten kanssa työskenteleviä miettimään uusia toimintatapoja. Avoimen datan aalto etenee globaalin tietopilven tuntumassa. Suomessakin aalto on jo liikkeellä: vuonna 2012 avoimen datan edistämisen ja hyödyntämisen ympärillä on ollut tapahtumia lähes viikottain ja etenemisvauhti on kova. Avoimen datan pelisääntöjä rakenetaan tilanteessa, jossa avoimen datan aalto uhkaa edetä sääntelijöiden tavoittamattomiin. Tällä kaikella alkaa olla kiire, ja tiedemaailmankin on pysyttävä aallon harjalla.
 
+Before the analysis some hypothesis can be drawn, though they can't be adequately tested in the current setting. Firstly, it is assumed that *spatial impact} of social assistance is low in all of the countries. In addition, as there is more absolute poverty (housing deficiencies, fuel poverty) in Eastern Europe (degradation of infrastructure) the assistance from social benefits makes little difference for spatial disparities. While poor regions are getting more run down, the net impact of income redistribution is not able slow down the process. 
 
-...Tilastollisen tutkimuksen käsitettä käytetään suomen kielessä usein melko laveasti. Tässä tekstissä puhutaan laskennallisesta analyysistä, joka nähdään koostuvan yhtäältä tietojenkäsittelytieteellisestä data-analyysistä että toisaalta tilastotieteellisestä data-analyysistä. Määrällisen tutkimusprosessin työmäärästä usein vain pieni osa on varsinaista tilastotieteellistä analyysiä ja suurin osa työstä kuluu datan keräämiseen sekä muokkaamiseen.
 
-Matthew L. Jonckers
+# Data & Methods
 
----
+My analytical framework is grounded on the recommendations of Canberra Group with two distinctive characteristics drawn from transition research. First, special emphasis is put on space and spatial dimension at the regional or "subnational" scale where much of inequality is rooted. Second, relative, income based measures of poverty are challenged with energy poverty as an indicator of more absolute deficiencies in living standards. GIS-software and cartographic illustrations [quantum_2011} are used to combine the spatial and socioeconomical aspects of analysis. Household level data from EU-SILC is used as main data frame for social indicators.
 
+## EU-silc and Eurostat regional statistics
 
-@manovich_software_2013 [p. 22-23] sanoo että 
+The data on which the analysis are based come from the EU Survey on Income and Living Conditions (EU-SILC) for 2008. EU-SILC provides comparable, cross-sectional and longitudinal multi-dimensional data on income, poverty, social exclusion and living conditions in the European Union. EU-SILC is conducted by the member states of the European Union and coordinated by Eurostat. Dataset consist of cross-sectional and longitudinal data including variables on income, poverty, social exclusion, housing and other living conditions. Data on income and social benefits are collected both at household and individual level. Household data includes aggregates for gross and disposable income and household related social benefits.
 
+Indicators of poverty and social exclusions in EU-silc datasets was designed primarily to serve analysis at the national level. Recently, there has been growing interest on applying dataset in regional analysis both from methodological [@verma_assessment_2010;@bonerandi-richard_uses_2011] and analytical [@reinstadler_macro_2010] perspectives. Main problem arises from possible sampling errors when breaking a nationally representative sample into regional sub-samples. Is necessary to focus on most basic indicators among the Laeken indicators when breaking them down to regional level as the data breakdown itself increases the data requirements. Further narrow disaggregation of data (by age, gender, eg.) simultaneously with regional breakdown has to be applied with caution.  In addition, regional breakdown limits the possibilities to study trends over time to cross-sectional measures.[@verma_assessment_2010} 
 
+There are various projects dealing with this issue in EU-silc as EURAREA Project (2001-2004), SAMPLE Project (2008-2011)and AMELI Project (2008-2011) and Eurostat has recently published a good overview of this issue by [see,@verma_robustness_2010] [See also,@verma_assessment_2010]. To address these issues \citet{kraft_simpopulation_2010} have written a package "simPopulation" for R for microsimulation procedure to improve the robustness of indicators in subgroups. Combined with package "laeken" by Andreas Alfons, Josef Holzer and Matthias Templ [see more,@templ_variance_2011;@templ_standard_2011;@templ_robust_2011] for robust analysis of social exclusion indicators in EU-silc provides solid statistical means for proceeding. 
 
-**Tässä esseessä** käsittelen avointa sähköistä dataa yhteiskuntatieteellisen tutkimuksen näkökulmasta. Avoin data tai *big data* tarkoittaa tässä yhteydessä verrattain uutta sähköiseen muotoon kertyvää dataa, jota ei kerätä jotain tiettyä tutkimuskysymystä silmällä pitäen, vaan data ikäänkuin *kertyy* esimerkiksi dokumentaation tai teknisen sovelluksen keräämänä. Tyypillisinä esimerkkeinä aineistoista voidaan pitää mm. *sosiaalista mediaa* [esim. @king_how_2012], *vaalidataa* [esim. @louhos_2013], *poliittisen päätöksenteon dataa* [esim. @hetherington_how_2012] tai vaikkapa *rikollisuuteen ja oikeuslaitoksen toimintaan liittyvää dataa* [esim. @lipsky_racial_2012]. Kaikille näille tutkimuksille yhteistä on avoiminen tietovirtojen tietotekninen hyödyntäminen tieteenalan perinteisiin tutkimuskysymyksiin vastaamiseksi.
 
+## Unit of region
 
+ The choice of unit of region is the first step when when pursuing a regional level analysis. In the geographical context of EU a there are numerous substantial and practical reasons for choosing the Nomenclature of Units for Territorial Statistics (NUTS)[^1] geographical-administrative regions for social policy analysis. As \citet[p. 9.]{verma_robustness_2010} writes NUTS regions are a) most commonly used units for the formulation and implementation of social policy, b) units are well-defined and identifiable and c) already widely accepted and used by researchers and producers of statistical information.
 
-**Suomalainen määrällinen yhteiskuntatutkimus** on edelleen vahvasti kiinni Kingin mainitsemissa *menneen puolivuosisadan* aineistoissa sekä menetelmissä. Menetelmällinen kehitys, sikäli kun sitä on ollut, on painottunut uusien *tilastollisten* menetelmien soveltamiseen aineistojen ja tutkimuskysymysten pysyttyä pitkälti ennallaan. Aineistojen osalta **viranomaisrekistereitä** on saatu tutkittavaksi yhä enemmän. Rekisteriaineistotutkimus on menetelmällisesti hyvin erityinen tutkimusala, jolla ei ole sovelluksia juuri pohjoismaita kauemmaksi.
+[^1]: Nomenclature of Units for Territorial Statistics (NUTS) is a geocode standard for referencing the subdivisions of countries for statistical purposes. The standard is developed and regulated by the European Union, and thus only covers the member states of the EU in detail. In EU-27 the average population size is around 5,5 milloin per NUTS1 region and 1,8 million per NUTS2 region and a little under 0,3 million per NUTS3 region. The units vary considerable in size across the countries, and often also within the countries}
 
-Uudet sähköiset aineistot eivät ole ainoa syy päivittää teoreettista ja menetelmällistä osaamista. Etenkin survey-aineistojen käyttöä uhkaa yhtäältä resurssien väheneminen ja toisaalta ihmisten vähenevä osallistumisinto. Säästöpaineiden alla laajojen survey-aineistojen on uhattuna, etenkin kun uusien kyselytutkimusten vastausprosentit ovat tasolla, joka herättää kysymyksiä tulosten yleistämisestä ja siten koko tutkimusmenetelmän käyttökelpoisuudesta tulevaisuudessa.
+Information about geographical location of the household is far from perfect in EU-silc, but reaches NUTS2-level for some of the countries. For this seminar paper I have chosen Austria as Western European country with low regional disparities and high income, and Poland as low-income, post-socialist country with high regional disparities. My current dataset does not allow breakdown at lover level than NUTS1, which makes analysis very superficial and suggestive at best. I'm in a urgent need for a dataset with more detailed regional classification. Level NUTS2 would already allow a breakdown into units that are relevant in regard to regional variations in, for example, regional production as well as implementation of social policies.
 
-**Siirtyminen tulevan puolivuosisadan** aineistojen hyödyntämiseen tulee olemaan kivinen tie. Se edellyttää merkittävää paradigma-tason muutosta läpi tieteenalan. Käytännössä muutos edellyttää tietotekniikan hyödyntämisen nostamista aivan uudelle tasolle. Menneen ajan aineistojen analysointiin on voinut hankkia yksityiseltä yritykseltä sovelluksen (esim. SPSS, Stata, SAS, jne.), jonka avulla kriteerit täyttävän mallin on voinut suorittaa. Nykyään tieteelliselle tutkimukselle relevantit uudet aineistot ja uudet analyysimenetelmät kehittyvät niin nopeasti, etteivät kaupalliset tuotteet edes yritä pysyä kehityksessä mukana, vaan keskittyvät palvelemaan yrityksiä joskin osin samoissa ison datan haasteissa.
+## Definitions of poverty
 
-Tieteellisten ohjelmistojen kehitys onkin siirtynyt yhä enemmän tiedeyhteisön varaan ja kehitystyöhön osallistumisesta tullut myös yksi keskeinen akateemisen meritoitumisen muoto. Viime vuosina yhdysvaltalaisten huippuyliopistojen professorirekrytoinneissa on toistuvasti painotettu aktiivisuutta avoimen koodin analyysiohjelmistojen kehitysyhteisöissä. 
+Two different concepts of poverty will be utilized in this paper. First one follows the official EU methodology for social exclusion (laeken indicators) which is indirect and relative notion of poverty measured on national level at 60% of median income, so called *at-risk-of-poverty rate* [^2] (arpr) [@atkinson_social_2002].  In addition to arpr another laeken indicator, *relative median at-risk-of-poverty gap* [^3] is used to capture not just extend, but also the depth of poverty.
 
-Meritoitumisen näkökulmasta uudet aineistot ja menetelmien kehittäminen ovat kiinnostavia myös ns. tietovirtojen *ohjaamisen* kannalta. Tietovirroilla voidaan tarkoittaa esimerkiksi Venäjän tilastoviranomaisen Rosstatin jatkuvasti julkaisevaa uutta tilastotietoa tai vaikkapa Twitteriä. Mikäli tutkija onnistuu kehittämään nokkelan tavan hyödyntää tätä tietovirtaa ja jakaa menetelmänsä avoimesti tiedeyhteisön kesken, siirtyvät tutkijat helposti käyttämään tätä menetelmää päästäkseen käsiksi ko. tietoihin. Tietovirtojen kanavoinnista on tulossa myös yksi yliopistojen vetovoimaisuutta lisäävä tekijä. Sama logiikka on [R-kielen](http://www.r-project.org/) suosion  [nopean kasvun takana](http://r4stats.com/articles/popularity/). R:n suosiosta kertoo paljon myös se, että parhaillaan [Courserassa](https://www.coursera.org/) käynnissä olevalle *Computing for Data Analysis*-kursille oli ilmoittautunut yli 40 000 opiskelijaa.
+[^2]: Estimate the at-risk-of-poverty rate, which is defined as the proportion of persons with equivalized disposable income below the at-risk-of-poverty threshold.
 
-**Internetissä jaetun datan** lisääntyminen ja kiinnostus sen hyödyntämiseen ovat yksi syy akateemisen julkaisutoiminnan ympärillä tapahtuneeseen liikehdintään. Avoimen tiedon helppo saatavuus on herättänyt kysymyksen siitä, miksi tutkijat eivät voisi yhtä lailla jakaa omia tutkimustuloksiaan avoimesti ilman tai minimaalisin välikäsin. *Elsevier*-kustannustalon liiketoimintamallin kritisoinnista lähtenyt  [Academic Spring](http://en.wikipedia.org/wiki/Academic_Spring)-liike on kuluneen vuoden aikana yhdistänyt laajasti eri maiden tutkijayhteisöjä kyseenalaistamaan nykyistä akateemista julkaisumallia (ks. [*Cost of knowledge*](http://thecostofknowledge.com/)). Kritiikin kärki kohdistuu siihen, että isot kustantamot myyvät kovaan hintaan takaisin yliopistoille tutkijoiden veronmaksajien rahoilla tekemiä julkaisuja ja samalla pidättävät tekijänoikeudet itsellään rajoittaen tutkijoiden mahdollisuuksia jakaa omia tuloksiaan vapaasti netissä. Liikehdintä sai alkunsa matemaatikko Timothy Gowersin [blogissaan julkaisemasta tekstistä](http://gowers.wordpress.com/2012/01/21/elsevier-my-part-in-its-downfall/). Blogin kommenteissa eräs lukija nasevasti tiivisti järjestelmän epäkohdat:
+[^3]: Estimate the relative median at-risk-of-poverty gap, which is defined as the relative difference between the median equivalized disposable income of persons below the at-risk-of-poverty threshold and the at-risk-of-poverty threshold itself (expressed as a percentage of the at-risk-of-poverty threshold)
 
-> It is utterly absurd that we still have publishers — we write for free (because we want our work read or known), we edit or referee for free and then pay large amounts of money to buy the work back. With the advent of the Web, authors should have eliminated publishers.
+The main weakness in relation to my definitions of poverty can be seen in figure 3 that illustrates the median household incomes and poverty thresholds by EU countries. Dotted lines surround the countries in this analysis and the obvious is that poverty threshold in Austria is more than double the median income in Poland. This means, of course, that the poor household in Poland has substantially lower level of material assets than the Austrian counterpart. A use of EU-wide poverty threshold could have been used to strengthen the analysis as recommended by [p. 115,@atkinson2005taking], but was not employed at this stage. [See more,@fahey2007case].
 
-**Perinteinen akateeminen** julkaisumalli on monella tapaa jos ei tiensä päässä. Toiminnan liiketaloudellinen kannattavuus on monella tapaa uhattuna. Tutkimusjulkaisujen kysyntää siirtyy paperille painetusta sähköisiin dokumentteihin, joiden tuotannossa ei enää tarvita samanlaisia isoja pääomia kuin mitä esim. paperikirjojen. Uudet laitteet (tietokoneet, tabletit, älypuhelimet) yleistyvät nopeasti ja ovat osoittautuneet melko hyviksi artikkelikasojen korvaajiksi. Samalla myös kiinnostus [open access -lehdet](http://en.wikipedia.org/wiki/Open-access_journal) lehtiä kohtaan on lisääntynyt, olkookin että niiden arvo on vielä kaukana arvostettujen perinteisten lehtien tasosta. Kun taas ajatellaan kirjoja niin kustannustaloilla on vielä myös niiden *nimi* tai *maine*, jonka houkuttelemana ne säilyttävät asemansa vielä pitkään. Siitäkin huolimatta, että teknologinen kehitys on jo mitätöinyt kaikki muut kustantajien perinteiset vahvuudet. 
 
-Määrällisen tutkimuksen näkökulmasta sähköinen julkaiseminen on noussut yhä kiinnostavammaksi ns. vuorovaikutteisen grafiikan kehittymisen myötä. Grafiikan lisäksi on mahdollista luoda myös laskennallisia analyysiympäristöjä raporttien lomaan, joita voi käyttää suoraan selaimesta käsin. Varsinaisiin julkaisuihin vuorovaikutteisella grafiikalla tai virtuaalisilla laskentaympäristöillä on vielä matkaa, mutta erilaisissa *harmaissa julkaisuissa* ja itse tutkimusprosessissa ne tulevat olemaan hyödyksi jo lähitulevaisuudessa.
+In addition to relative monetary indicator a non-monetary indicator of *energy poverty} is enrolled into analysis to broaden the scope of poverty. Here the definition is adopted from Stefan [p. 9,@buzar_energy_2007] as *inability to heat home up to a socially- and materially necessitated level*. This definition includes both the biologically determined limit of 20 $^\circ$C required to maintain comfort and health [more on biological definition [@boardman1991fuel] and the subjective minimun below which an individual feels unable to perform his/her every life [p. 9,@buzar_energy_2007]. Here the energy poverty is limited to the home and does not include mobility and residence outside the domestic domain. [For broader discussion on energy poverty especially within UK [see,@bradshaw1983energy;@boardman1991fuel;@rudge2000cutting;@healy2003excess]. From EU-silc database variable *HH050: Ability to keep home adequately warm* is used as an indicator for energy poverty. Figure 4 presents the shares of households suffering from energy poverty in Poland and Austria.
 
-<!--
-**Tekniset edellytykset** avoimelle sähköiselle julkaisemiselle ovat jokaisen tutkijan käytettävissä ilman taloudellisia kustannuksia. Tämä essee on kirjoitettu käyttäen [Markdown](http://daringfireball.net/projects/markdown/)-merkintäkieltä, josta se on käännetty Berkeleyn yliopiston filosofian professorin [John MacFarlanen](http://johnmacfarlane.net/) kehittämän  [pandoc](http://johnmacfarlane.net/pandoc/):n avulla niin [nettisivuksi](http://research.muuankarski.org/kevatsemma/essee.html), [sähköiseksi kirjaksi](http://research.muuankarski.org/kevatsemma/essee.epub), [.pdf-muotoon](http://research.muuankarski.org/kevatsemma/essee.pdf) kuin toimisto-ohjelmien formaatteihin [LibreOfficelle](http://research.muuankarski.org/kevatsemma/essee.odt) ja [MS Wordille](http://research.muuankarski.org/kevatsemma/essee.docx). Onkin kiinnostavaa seurata pystyvätkö isot kustantajat säilyttämään asemansa uusissa olosuhteissa ja kilpailutilanteessa. Jos jokin on varmaa, niin se ettei pienen tiedekustantamon perustaminen ole koskaan aiemmin ollut yhtä helppoa ja ajankohtaista.
--->
+# Use of spatial data analysis in poverty research
 
-**Uusien teknologisten sovellusten** ohella sähköistä julkaisumuotoa puoltavat myös etenkin laskennallisten tieteiden kohtaamat vaatimukset analyysien *toistettavuudesta* [ks. esim. @peng_reproducible_2011]. Toistettavuudella tarkoitetaan datan ja analyysialgoritmien avointa julkaisemista siten, että lukijan on mahdollista arvioida analyysin pätevyyttä ja johtopäätöksiä. Toistettavuudesta on alettu puhua enemmän myös yhteiskuntatieteellisen tutkimuksen parissa kun samojen isojen kansainvälisten tutkimusaineistojen parissa työskentelee tuhansia tutkijoita, joiden tutkimustulokset ja johtopäätökset ovat usein ristiriitaisia. 
+# Use of spatial analysis in Russian Federation (in poverty research)
 
-**Palaan vielä johdannossa** viittaamaani New York Times artikkeliin laskennallisista tutkimusmenetelmistä kirjallisuudentutkimuksessa [@lohr_literary_2013]. Artikkelissa pohdittiin paljon myös sitä, tarkoittaako *määrän* lisääntyminen laadullisen tutkimuksen aseman heikentymistä. Professori Jonckerin mukaan oikeiden tutkimuskysymysten löytäminen ja analyysin virheiden näkeminen edellyttävät syvää perehtyneisyyttä tieteenalaan yhä edelleen. 
+# Reseach Design
 
-> Quantitative tools in the humanities and the social sciences, as in other fields, are most powerful when they are controlled by an intelligent human. Experts with deep knowledge of a subject are needed to ask the right questions and to recognize the shortcomings of statistical models.
+## Data
 
-> "You'll always need both," says Mr. Jockers, the literary quant. “But we’re at a moment now when there is much greater acceptance of these methods than in the past. There will come a time when this kind of analysis is just part of the tool kit in the humanities, as in every other discipline.” 
+## Methods
 
-Yksittäisen tutkijan on vaikea vastata tähän haasteeseen ja määrällisen analyysin yleistyminen tuleekin vaatimaan kaikilla tieteenaloilla uudenlaista yhteistyötä tutkijoiden ja tieteenalojen kesken. Gary Kingin [s 3., @king_restructuring_2013] mukaan myös Yhdysvalloissa yhteiskuntatieteiden tutkijat ovat jo siirtymässä tutkijankammioista yhteistyöhön kannustaviin, laboratorio-tyyppisiin monitieteisiin tutkimusryhmiin. Laajan sähköisen datan analysointi edellyttää tietoa ja osaamista, jota ei löydy miltään yhteiskuntatieteiden perinteiseltä tieteenalalta.
+# Analysis
 
-> Through collaboration across fields, however, we can begin to address the interdisciplinary substantive knowledge needed, along with the engineering, computational, ethical, and informatics challenges before us. [s 3., @king_restructuring_2013]
+# Conclusions
 
-Uusi digitaalinen data myös hämärtää yhteiskuntatieteissä perinteistä jakoa laadullisiin ja määrällisiin tutkimusotteisiin. Gary King [s 4., @king_restructuring_2013] ennustaa molempien tutkimussuuntien yhdistyvän yhdeksi yhteiskuntatieteeksi, jossa samoja ongelmia ratkotaan yhteistyössä.
 
-> Instead of quantitative researchers trying to build fully automated methods and qualitative researchers trying to make due with traditional human-only methods, both now are heading toward, using, or developing computer-assisted methods that empower both groups. This development has the potential to end the divide, to get us working together to solve common problems, and to greatly strengthen the research output of social science as a whole.
-
-Tällainen lähetyminen on ainakin suomalaisessa yhteiskuntatieteessä vielä utopistinen visio. Sähköisen datan yhteiskunnallisen hyödyntämisen kenties kiinnostavin avaus on Aalto-yliopiston ja Helsingin yliopiston tietojenkäsittelytieteen jatko-opiskelijoiden perustama [Louhos-projekti](http://louhos.github.com/). Hyvin kuvaavaa on se, ettei tässä projektissa ole lainkaan yhteiskuntatieteilijöitä, ei määrällisesti tai laadullisesti orientoituneita.
-
-**Venäjän ja Itä-Euroopan** yhteiskuntatieteellisen tutkimuksen näkökulmasta uudet avoimet aineistot ja menetelmät ovat erityisen ajankohtaisia. Venäjällä viralliset tilastot ovat olleet avoimia vasta muutaman vuoden ajan ja tekniset ratkaisut datan avaamiselle ovat edelleen hyvin takapajuisia. Voidaankin sanoa että jo *menneen puolivuosisadan* aineistojen tehokas käyttö  edellyttää Venäjän kohdalla verrattain hyviä *tulevan puolivuosisadan* menetelmien osaamista. 
-
-Samaan aikaan internetin merkitys kaikessa yhteiskunnallisessa näyttää voimistuvan. Sosiaalisen median rooli yhteiskunnallisen keskustelun ja jopa mobilisaation kanavana näyttää voimistuvan kaikkialla entisen Neuvostoliiton alueella. Ja yhteiskunnan tutkijan tulee tietysti olla paikalla siellä, missä yhteiskuntaa tehdään.
-
-
-
-# Mikä on R? - Synty ja ominaispiirteet
-
->R has already won praise and plaudits from established media outlets such as the New York Times, Forbes, Intelligent Enterprise, InfoWorld and The Register. When you consider that R is a high-level computer programming language designed mostly for quants (the nickname for a subspecies of geeks who focus on quantitative analysis), the adoring media attention seems nothing short of astounding.
-
-Joka tapauksessa @smith_r_2010 [s.23] kirjoittaa että paska on aina paskaa.
-
-## Synty
-
-
-- R-language was iniated by two 
-- open source
-
-## R-kieli ohjelmointikielenä
-- object oriented, s-language bell laboratories
-(G)UI's, IDE Rstudio, 
-- contributed packages
-
-## R-kieli tilastollisen laskennan työkaluna
-- structure
-- visual
-- open source, community, licensing, teaching
-
-## R-kielen suosio
-- enterprise level services
-
-# Miten R on mahdollinen? -  R-projekti
-
-## Projektin organisaatio
-- development vs. user help
-
-## Kielen kehitys
-
-## Käyttäjätuki
-- mailing lists - general vs. special interest groups
-blogs
-- q & a sites
-
-## Kontribuoidut paketit
-- CRAN - task views
-R-forge
-- Github
-- bioconductor
-
-# Mihin R-kieltä käytetään? - R käytännön työssä
-Why R-language is popular
-
-## Tilastollisten menetelmien kehitys
-- new methods implemented first in R
-
-## Soveltava tilastotiede
-
-### Bio/geo-tieteet
-- Geograhical Information Systems
-
-### Yhteiskuntatieteet
-
-### Humanistiset tieteet - ihmiskielten analyysi
-
-## Yritysanalytiikka
-- insurance, big data, banking, industry
-- social media: facebook, google, twitter
-
-## Datajournalismi
-- Guardian, New York Times, Chicago Herald Tribune
-
-# Miten  R toimii käytännössä? - Yhteiskuntatieteellisten aineistojen analyysi R-kielellä.
-
-## Sanapilvet
-
-## Verkostokartat
-
-## Spatiaalinen visualisointi
-
-## Klusterointi
-
-- insurance, big data, banking, industry
-- social media: facebook, google, twitter
-
-# Kirjallisuus
-
+# Bibliography
 
