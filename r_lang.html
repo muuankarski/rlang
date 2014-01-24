@@ -1,76 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="english" xml:lang="english">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Markus Kainu" />
+  <meta name="date" content="2014-01-23" />
+  <title>R-language for statistical computing and visualization in social sciences and humanities</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style>
+  
+  -something { /* Just to escape the effect of html tag above in pandoc*/
+  
+  }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      	text-align: center;
+  	border-width:0px;
+  	font-size: 1.5em;
+  	margin: 0 0 5px 0;
+  	word-spacing: .1em;
+  	border-bottom: 0px;
+      }
+  
+  .author /* Pandoc author(s) header (h2.author) */
+      {
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.2em;
+      border-bottom: 0px;
+      }
+  
+  .date /* Pandoc date header (h3.date) */
+      {
+  	font-family:  Avant Garde, Arial;
+  	text-align: center;
+  	font-size: 1.1em;
+  	line-height: 1.2em;
+      }
+  
+  
+  body {
+      margin-left: 240px;
+      max-width:600px; 
+      border: 0px;
+      font-family: Palatino, Helvetica, sans-serif;
+  }
+  
+  
+  #toc {
+      font-size:0.9em;
+      height: 100%;
+      position: fixed; 
+      width: 220px;
+      left: 5px;
+      padding-top: 20px;
+      color: #003333;
+      border-right: 1px dashed #C1C1C1;
+  }
+  
+  #toc_header {
+      font-size: 1em;
+      font-weight: bold;    
+      border-bottom: 1px dashed #C1C1C1;
+      color: black;
+  }
+  
+  
+  
+  #toc li {
+      padding: 2px 4px;
+      margin-left: 2px;
+  }
+  
+  
+  #toc a {
+      color: #003333;
+      display: block;
+  }
+  
+  
+  
+  blockquote {
+  	padding-left: .5em; 
+      border-left: 2px solid #C1C1C1;
+  	font-style: italic;
+  }
+  
+  
+  pre {	
+     margin-top: 0;
+     max-width: 95%;
+     border: 1px dashed #ccc;
+     white-space: pre-wrap;
+     font-size:1.0em;
+      background: #FFFFFF;
+  }
+  
+  pre code {
+     display: block; 
+     padding: 0.2em;
+     font-size:1.0em;
+  }
+  
+  code.r, code.cpp {
+     background-color: #ECEEF0;
+  }
+  
+  
+  
+  ul {
+  	font-size: 100% !important;
+  	font-family: Palatino, Helvetica, sans-serif;
+  }
+  li {
+  	font-family: Palatino, Helvetica, sans-serif;
+   	font-size: 1em;
+   	line-height: 1.1em;
+  }
+  
+  
+  p {
+  	font-family: Palatino, Helvetica, sans-serif;
+  	padding-top: 2px;
+  	padding-bottom: 2px;
+  	font-size: 1em;
+  	line-height: 1.2em;
+  }
+  ol {
+  	list-style: decimal outside;
+  	list-style-type: decimal;
+  	float: none;
+  	margin: .5em 0 .5em 30px;
+  	padding: 0;
+  }
+  ul {
+  	margin: .2em 0 .2em 10px;
+  	padding: 0;
+  }
+  UL li, ol li {
+  	line-height: 1.1em;
+  	padding: 2px;
+  }
+  a:link {
+  	color: #657b83;
+     /* text-decoration: none; */
+  }
+  a:hover {
+  	color: #657b83;
+  }
+  a:visited {
+  	color: #657b83;
+  }
+  a:focus {
+  	color: #657b83;
+  }
+  a:active {
+  	color: #657b83;
+  }
+  
+  h1 {
+  	font-family:  Avant Garde, Arial;
+  	font-size: 1.3em;
+  	padding: 2px;
+  	line-height: 1.3em;
+      font-weight: 400;
+  	/*letter-spacing: 0.06em;
+  	word-spacing: .1em;*/
+      border-bottom: 0.5px solid #657b83;
+  	text-transform:uppercase;
+      color: #657b83;
+  }
+  h2 {
+  	font-family:  Avant Garde, Arial;
+  	font-size: 1.1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+      font-weight: 300;
+  	letter-spacing: 0.05em;
+  	word-spacing: .1em;
+  	border-bottom: 0.5px dashed #657b83;
+  /*	text-transform:capitalize;*/
+      color: #657b83;
+  
+  }
+  h3 {
+  	font-family:  Avant Garde, Arial;
+  	font-size: 1.1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+      font-weight: 300;
+  	letter-spacing: 0.05em;
+  	word-spacing: .1em;
+      color: #657b83;
+  
+  }
+  h4 {
+  	font-family: Avant Garde;
+  	font-size: 1.0em;
+  	padding: 2px;
+  	line-height: 1.0em;
+  	color: #555;
+  	font-weight: italic;
+      color: #657b83;
+  }
+  h5 {
+  	font-family: Avant Garde;
+  	font-size: 1.05em;
+  	padding: 2px;
+  	line-height: 1.15em;
+  	color: #555;
+  	font-weight: normal;
+      color: #657b83;
+  }
+  h6 {
+  	font-family: Avant Garde;
+  	font-size: 1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+  	color: #555;
+  	font-weight: normal;
+      color: #657b83;
+  }
+  p.caption, table caption, caption{
+      margin-top:0em;
+      padding:2px;
+      font-weight: 600;
+      font-size:1.0em;
+      text-align:left;
+      color: #657b83;
+  }
+  
+  /* table styles */
+  table {
+  	border-collapse: collapse;
+  	border-spacing: 0;
+      line-height: 1.4em;
+  	font-size: 0.9em;
+  	/*font-family: monospace;*/
+  
+  }
+  .views-table, table {
+  	margin-left: 2px;
+  	margin-bottom: 10px;
+  	/*width: 1300px;*/
+  }
+  tr {
+  	line-height: 1.2em;
+  	border-bottom: #9e9e9e thin solid;
+  }
+  tr:last-child {
+  	line-height: 1.2em;
+  }
+  th {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  	text-align: left;
+  	border-bottom: #9e9e9e thin solid;
+  }
+  th:last-child {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  	text-align: left;
+  }
+  th:first-child {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border: #9e9e9e thin solid; */
+  }
+  tbody tr {
+  	line-height: 1.2em;
+  /*	border-left: #9e9e9e thin solid; */
+  }
+  tbody tr:nth-child(odd) {
+  	line-height: 1.2em;
+  	background-color: #F3F5F5;
+  }
+  td {
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  }
+  td:last-child {
+  	padding: 0 5px 0 5px;
+  }
+  DL {
+  	margin: .3em 0 .3em 0;
+  }
+  DT {
+  	margin: .3em 0 .3em 0;
+  }
+  DD {
+  	line-height: 1.5em;
+  	list-style: none;
+  	margin: .7em 0 .7em 2em;
+  }
+  td.active {
+  	background-color: transparent!important;
+  }
+  tr:last-child {
+  	border-bottom: #9e9e9e thin solid;
+  }
+  tr:first-child {
+  	border-top: #9e9e9e thin solid;
+  }
+  th:last-child {
+  /*	border-left: #9e9e9e thin solid; */
+  }
+  th:last-child {
+  	/*border-right: #9e9e9e thin solid;*/
+  }
+  </style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">R-language for statistical computing and visualization in social sciences and humanities</h1>
+<h2 class="author">Markus Kainu</h2>
+<h3 class="date">January 23, 2014</h3>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#introduction---open-research-methods-in-general">Introduction - Open Research Methods in general</a></li>
+<li><a href="#what-is-r---origin-and-characteristics">What is R? - Origin and characteristics</a><ul>
+<li><a href="#origin">Origin</a></li>
+<li><a href="#r-language-as-a-programming-language">R-language as a programming language</a></li>
+<li><a href="#r-language-as-a-tools-for-statistical-computing">R-language as a tools for statistical computing</a></li>
+<li><a href="#popularity-of-r-language">Popularity of R-language</a></li>
+</ul></li>
+</ul>
+</div>
 <!--
 cd ~/workspace/openscience/digihist
-~/.cabal/bin/pandoc r_lang.md -o r_lang.pdf --toc --number-section
+pandoc -s r_lang.md -o r_lang.html --toc --filter pandoc-citeproc --include-in-header= ~/workspace/web/css/rmarkdown.css
+
+pandoc r_lang.md -o r_lang.pdf --toc --number-sections --filter pandoc-citeproc
+#
+pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_templates/pandoc.latex.template --number-sections --toc --latex-engine=xelatex -V lang=english -V papersize:a4paper -V documentclass=scrartcl
+
 -->
 
-<h1 id="open-research-methods-in-general"><span class="header-section-number">1</span> Open Research Methods in general</h1>
-<p>The debate on open science in the context of Social and Humanitarian sciences has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due quite obvious reason</p>
-<p>Discussion on Open Research Methods has not been particularly active</p>
-<p>Open research methods have not received the</p>
+<h1 id="introduction---open-research-methods-in-general">Introduction - Open Research Methods in general</h1>
+<p>The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.</p>
+<p>Firstly, research methods in SSH have been predominantly qualitative meaning that the role of software or computation has been minor in the analytical process. Second, the quantitative fields of SSH have mostly used tailor-made survey and other specific closed research data that was well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks different as the quantity of digital data and is's multiple sources are challeging both traditional approach in SSH, the purely qualitative analysis and closed data practises quantitative analysis.</p>
+<p>There are now custom tools for open and often messy and big new digital data, but we flexible tools that can be tailored and modified for the particular question and data. From this demand we have witnessed an unseen growth in user and developers of free and open source computational research methods.</p>
+<p>As Gary <span class="citation">King (2014)</span> describes it:</p>
+<blockquote>
+<p>An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end-of-period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially and are already many orders of magnitude more informative than ever before.</p>
+</blockquote>
+<p>This was sensible choice in the era of closed data</p>
 <p>Open research methods are referred as of a wider open science discussion.</p>
-<h1 id="what-is-r---origin-and-characteristics"><span class="header-section-number">2</span> What is R? - Origin and characteristics</h1>
-<h2 id="origin"><span class="header-section-number">2.1</span> Origin</h2>
+<h1 id="what-is-r---origin-and-characteristics">What is R? - Origin and characteristics</h1>
+<h2 id="origin">Origin</h2>
 <ul>
 <li>R-language was iniated by two</li>
 <li>open source</li>
 </ul>
-<h2 id="r-language-as-a-programming-language"><span class="header-section-number">2.2</span> R-language as a programming language</h2>
+<h2 id="r-language-as-a-programming-language">R-language as a programming language</h2>
 <ul>
 <li>object oriented, s-language bell laboratories (G)UI's, IDE Rstudio,</li>
 <li>contributed packages</li>
 </ul>
-<h2 id="r-language-as-a-tools-for-statistical-computing"><span class="header-section-number">2.3</span> R-language as a tools for statistical computing</h2>
+<h2 id="r-language-as-a-tools-for-statistical-computing">R-language as a tools for statistical computing</h2>
 <ul>
 <li>structure</li>
 <li>visual</li>
 <li>open source, community, licensing, teaching</li>
 </ul>
-<h2 id="popularity-of-r-language"><span class="header-section-number">2.4</span> Popularity of R-language</h2>
+<h2 id="popularity-of-r-language">Popularity of R-language</h2>
 <ul>
 <li>enterprise level services</li>
 </ul>
-<h1 id="who-makes-the-r-possible---r-project"><span class="header-section-number">3</span> Who makes the R possible? - R-project</h1>
-<h2 id="organisation-of-the-project"><span class="header-section-number">3.1</span> Organisation of the project</h2>
-<ul>
-<li>development vs. user help</li>
-</ul>
-<h2 id="development-of-the-language"><span class="header-section-number">3.2</span> Development of the language</h2>
-<h2 id="user-support"><span class="header-section-number">3.3</span> User support</h2>
-<ul>
-<li>mailing lists - general vs. special interest groups blogs</li>
-<li>q &amp; a sites</li>
-</ul>
-<h2 id="contributed-packages"><span class="header-section-number">3.4</span> Contributed packages</h2>
-<ul>
-<li>CRAN - task views R-forge</li>
-<li>Github</li>
-<li>bioconductor</li>
-</ul>
-<h1 id="what-is-r-used-for---r-in-action"><span class="header-section-number">4</span> What is R used for? - R in action</h1>
-<p>Why R-language is popular</p>
-<h2 id="development-of-statistical-methods"><span class="header-section-number">4.1</span> Development of statistical methods</h2>
-<ul>
-<li>new methods implemented first in R</li>
-</ul>
-<h2 id="applied-statistics"><span class="header-section-number">4.2</span> Applied statistics</h2>
-<h3 id="biogeo-sciences"><span class="header-section-number">4.2.1</span> Bio/geo-sciences</h3>
-<ul>
-<li>Geograhical Information Systems</li>
-</ul>
-<h3 id="social-scienceseconomics"><span class="header-section-number">4.2.2</span> Social sciences/economics</h3>
-<h3 id="humanities---analysis-of-natural-languages"><span class="header-section-number">4.2.3</span> Humanities - analysis of natural languages</h3>
-<h2 id="businessenterprise-analytics"><span class="header-section-number">4.3</span> Business/enterprise analytics</h2>
-<ul>
-<li>insurance, big data, banking, industry</li>
-<li>social media: facebook, google, twitter</li>
-</ul>
-<h2 id="data-journalism"><span class="header-section-number">4.4</span> Data journalism</h2>
-<ul>
-<li>Guardian, New York Times, Chicago Herald Tribune</li>
-</ul>
-<h1 id="how-does-it-work---visualising-data-in-humanities-using-r-language"><span class="header-section-number">5</span> How does it work? - Visualising data in humanities using R-language</h1>
-<h2 id="word-clouds"><span class="header-section-number">5.1</span> Word clouds</h2>
-<h2 id="networks-maps"><span class="header-section-number">5.2</span> Networks maps</h2>
-<h2 id="spatial-visualisation"><span class="header-section-number">5.3</span> Spatial visualisation</h2>
-<h2 id="clustering"><span class="header-section-number">5.4</span> Clustering</h2>
-<h2 id="section"><span class="header-section-number">5.5</span> </h2>
+<!--
+
+# Who makes the R possible? -  R-project
+
+## Organisation of the project
+- development vs. user help
+
+## Development of the language
+
+## User support
+- mailing lists - general vs. special interest groups
+blogs
+- q & a sites
+
+## Contributed packages
+- CRAN - task views
+R-forge
+- Github
+- bioconductor
+
+# What is R used for? - R in action
+Why R-language is popular
+
+## Development of statistical methods
+- new methods implemented first in R
+
+## Applied statistics
+
+### Bio/geo-sciences
+- Geograhical Information Systems
+
+### Social sciences/economics
+
+### Humanities - analysis of natural languages
+
+## Business/enterprise analytics
+- insurance, big data, banking, industry
+- social media: facebook, google, twitter
+
+## Data journalism
+- Guardian, New York Times, Chicago Herald Tribune
+
+# How does it work? - Visualising data in humanities using R-language
+
+## Word clouds
+
+## Networks maps
+
+## Spatial visualisation
+
+## Clustering
+
+## 
+-->
+
+<div class="references">
+<h1>References</h1>
+<p>King, Gary. 2014. “Restructuring the Social Sciences: Reflections from Harvards Institute for Quantitative Social Science.” <em>PS: Political Science and Politics</em> 47: 165–172. <a href="http://journals.cambridge.org/repo_A9100Nlq">http://journals.cambridge.org/repo_A9100Nlq</a>.</p>
+</div>
+</body>
+</html>

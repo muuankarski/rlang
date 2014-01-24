@@ -1,31 +1,40 @@
 ---
-title:  'R-language for statistical computing and visualization for social and humanitarian sciences'
+title:  'R-language for statistical computing and visualization in social sciences and humanities'
 author: Markus Kainu
 date: January 23, 2014
 affiliation: University of Turku
 tags: [r-language, open science]
 bibliography: bibtex.bib
 lang: english
-abstract: In sit amet sapien mollis ligula dignissim vehicula. Fusce turpis dui, semper consequat erat eget, laoreet rutrum diam. Maecenas neque urna, convallis quis est rhoncus, imperdiet interdum lorem. Curabitur tempor nisi sit amet est feugiat, sed pharetra neque fringilla. Etiam at enim mattis, pretium nulla eu, bibendum tellus. Morbi sed volutpat augue. Phasellus porta pretium nulla vel tincidunt. Pellentesque vel fermentum ante, non varius nunc. 
+abstract: In sit amet sapien mollis ligula dignissim vehicula. Fusce turpis dui, semper consequat erat eget, laoreet rutrum diam. 
 ...
 
 <!--
 cd ~/workspace/openscience/digihist
+pandoc -s r_lang.md -o r_lang.html --toc --filter pandoc-citeproc -H ~/workspace/web/css/rmarkdown.css
+
 pandoc r_lang.md -o r_lang.pdf --toc --number-sections --filter pandoc-citeproc
 #
 pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_templates/pandoc.latex.template --number-sections --toc --latex-engine=xelatex -V lang=english -V papersize:a4paper -V documentclass=scrartcl
 
 -->
 
-# Open Research Methods in general
+# Introduction - Open Research Methods in general
 
-The debate on open science in the context of Social and Humanitarian sciences has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.
+The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.
 
-Firstly, research methods that researchers in humanitarian and social sciences have not being "software intensive" as is the case with digital humanities. Second, within the approaches that have used computational methods there has not been too many options to choose from and the use of proprietary analytical software like SPSS, Stata or SAS has been and still is common.
+Firstly, research methods in SSH have been predominantly qualitative meaning that the role of software or computation has been minor in the analytical process. Second, the quantitative fields of SSH have mostly used tailor-made survey and other specific closed research data that was well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks different as the quantity of digital data and is's multiple sources are challeging both traditional approach in SSH, the purely qualitative analysis and closed data practises quantitative analysis. 
 
-This was sensible choice in the era of closed data (@king2014)
+There are now custom tools for open and often messy and big new digital data, but we flexible tools that can be tailored and modified for the particular question and data. From this demand we have witnessed an unseen growth in user and developers of free and open source computational research methods.
+
+As Gary @king2014 describes it:
+
+>An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end-of-period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially and are already many orders of magnitude more informative than ever before.
+
+This was sensible choice in the era of closed data 
 
 Open research methods are referred as  of a wider open science discussion.
+
 
 
 # What is R? - Origin and characteristics
@@ -46,6 +55,8 @@ Open research methods are referred as  of a wider open science discussion.
 
 ## Popularity of R-language
 - enterprise level services
+
+<!--
 
 # Who makes the R possible? -  R-project
 
@@ -98,4 +109,8 @@ Why R-language is popular
 ## Clustering
 
 ## 
+-->
+
+# References
+
 
