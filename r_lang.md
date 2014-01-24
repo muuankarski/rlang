@@ -19,22 +19,17 @@ pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_temp
 
 -->
 
-# Introduction - Open Research Methods in general
+# Introduction - Open Research Methods
 
 The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.
 
-Firstly, research methods in SSH have been predominantly qualitative meaning that the role of software or computation has been minor in the analytical process. Second, the quantitative fields of SSH have mostly used tailor-made survey and other specific closed research data that was well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks different as the quantity of digital data and is's multiple sources are challeging both traditional approach in SSH, the purely qualitative analysis and closed data practises quantitative analysis. 
-
-There are now custom tools for open and often messy and big new digital data, but we flexible tools that can be tailored and modified for the particular question and data. From this demand we have witnessed an unseen growth in user and developers of free and open source computational research methods.
+Firstly, research methods in SSH have been predominantly qualitative meaning that the role of software or computation has been minor in the analytical process. Second, the quantitative fields of SSH have mostly used tailor-made survey and other specific closed research data that was well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks different as the quantity and multiple sources of digital data are challeging both traditional approaches in SSH, the purely qualitative approach and custom tools approach in quantitative analysis. 
 
 As Gary @king2014 describes it:
 
 >An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end-of-period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially and are already many orders of magnitude more informative than ever before.
 
-This was sensible choice in the era of closed data 
-
-Open research methods are referred as  of a wider open science discussion.
-
+The new open digital data is often big and messy and it calls for flexible tools that can be tailored and modified for the particular question and data. This haastaa ei vain yliopiston vaan myös yrityksen ja siksi on nähty.... From this demand we have witnessed an unseen growth in user and developers of free and open source computational research methods.
 
 
 # What is R? - Origin and characteristics
@@ -45,7 +40,7 @@ Open research methods are referred as  of a wider open science discussion.
 
 ## R-language as a programming language
 - object oriented, s-language bell laboratories
-(G)UI's, IDE Rstudio, 
+(G)UI's, IDE Rstudio, git
 - contributed packages
 
 ## R-language as a tools for statistical computing
