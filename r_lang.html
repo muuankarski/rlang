@@ -322,20 +322,16 @@
 </div>
 <div id="TOC">
 <ul>
-<li><a href="#introduction---open-research-methods-in-general">Introduction - Open Research Methods in general</a></li>
-<li><a href="#what-is-r---origin-and-characteristics">What is R? - Origin and characteristics</a><ul>
-<li><a href="#origin">Origin</a></li>
+<li><a href="#introduction---open-research-methods">Introduction - Open Research Methods</a></li>
+<li><a href="#what-is-r">What is R?</a><ul>
+<li><a href="#structure-of-r-project">Structure of R-project</a></li>
+<li><a href="#r-environment">R-environment</a></li>
 <li><a href="#r-language-as-a-programming-language">R-language as a programming language</a></li>
-<li><a href="#r-language-as-a-tools-for-statistical-computing">R-language as a tools for statistical computing</a></li>
+<li><a href="#popularity-of-r">Popularity of R</a></li>
 <li><a href="#popularity-of-r-language">Popularity of R-language</a></li>
 </ul></li>
-<li><a href="#who-makes-the-r-possible---r-project">Who makes the R possible? - R-project</a><ul>
-<li><a href="#organisation-of-the-project">Organisation of the project</a></li>
-<li><a href="#development-of-the-language">Development of the language</a></li>
-<li><a href="#user-support">User support</a></li>
-<li><a href="#contributed-packages">Contributed packages</a></li>
-</ul></li>
-<li><a href="#what-is-r-used-for---r-in-action">What is R used for? - R in action</a><ul>
+<li><a href="#learning-r">Learning R</a></li>
+<li><a href="#applications-of-r">Applications of R</a><ul>
 <li><a href="#development-of-statistical-methods">Development of statistical methods</a></li>
 <li><a href="#applied-statistics">Applied statistics</a><ul>
 <li><a href="#biogeo-sciences">Bio/geo-sciences</a></li>
@@ -363,28 +359,37 @@ pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_temp
 
 -->
 
-<h1 id="introduction---open-research-methods-in-general">Introduction - Open Research Methods in general</h1>
+<h1 id="introduction---open-research-methods">Introduction - Open Research Methods</h1>
 <p>The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.</p>
-<p>Firstly, research methods in SSH have been predominantly qualitative meaning that the role of software or computation has been minor in the analytical process. Second, the quantitative fields of SSH have mostly used tailor-made survey and other specific closed research data that was well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks different as the quantity of digital data and is's multiple sources are challeging both traditional approach in SSH, the purely qualitative analysis and closed data practises quantitative analysis.</p>
-<p>There are now custom tools for open and often messy and big new digital data, but we flexible tools that can be tailored and modified for the particular question and data. From this demand we have witnessed an unseen growth in user and developers of free and open source computational research methods.</p>
+<p>Firstly, research methods in SSH have been predominantly qualitative meaning that the software has played a supporting role in the analytical process. Second, the quantitative fields of SSH have mostly used survey and other, often closed, tailor-made research data that is well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks somewhat different as the quantity and multiplicity of sources of digital data are challeging both traditional approaches in SSH, the purely qualitative approach and custom tools approach in quantitative analysis.</p>
+<p>As relevant data for SSH is being generated and published in multiple sites and as the data is often messy and big in size this development calls for flexible tools that can be tailored and modified for the particular data and research question. The custom proprietary tools that are well fitted for analysis of survey, register and statistical data</p>
+<p>Proprietary software vendors cannot keep up with this development and therefore we have witnessed an unseen growth in userbase and developers of free and open source computational research methods. And it is not only that there are no proprietary software for these purposes, but the open research methods are also required becaused of</p>
 <p>As Gary <span class="citation">King (2014)</span> describes it:</p>
 <blockquote>
 <p>An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end-of-period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially and are already many orders of magnitude more informative than ever before.</p>
 </blockquote>
-<p>This was sensible choice in the era of closed data</p>
-<p>Open research methods are referred as of a wider open science discussion.</p>
-<h1 id="what-is-r---origin-and-characteristics">What is R? - Origin and characteristics</h1>
-<h2 id="origin">Origin</h2>
+<h1 id="what-is-r">What is R?</h1>
+<p>The name R comes from the first names of two New Zealand statisticians Ross Ihaka and Robert Gentleman who created the language in late 1990's. R can be regarded as an implementation of the S language which was developed at Bell Laboratories in 70's by Rick Becker, John Chambers and Allan Wilks <span class="citation">(Venables, Smith, and Team 2013)</span>. Currently the development of R language is run by <em>R Development Core Team</em> that Chambers is a member of.</p>
+<p>R is one of the most popular platforms for data analysis and visualization currently available. R is distributed under the terms of the <em>GNU General Public License</em> so it is free and open source and it can be distributed under those conditions. R runs in Windows, Mac OS X and GNU/Linux operating systems on local computer, but a different server implementations are becoming increasingly popular.</p>
+<p>R is an object-oriented programming language which means that unlike in SPSS or SAS that give you abundant information on particular model you implement, R only creates a <em>fit object</em> in memory that can be used in subsequent analysis. This structure of R guides the user to implement the data-analysis as stepwise process which is very useful when solving complex research problems using complex and messy data that is often the case in contemporary computational SSH research.</p>
+<h2 id="structure-of-r-project">Structure of R-project</h2>
+<p><a href="http://www.r-project.org/">The R Project for Statistical Computing</a></p>
+<p><strong>Organisation of the project</strong></p>
 <ul>
-<li>R-language was iniated by two</li>
-<li>open source</li>
+<li>development vs. user help</li>
 </ul>
+<p><strong>Development of the language</strong></p>
+<p><strong>User support</strong></p>
+<ul>
+<li>mailing lists - general vs. special interest groups blogs</li>
+<li>q &amp; a sites</li>
+</ul>
+<p>R installation consists of so called <em>base installation</em> that includes the core with some 25 additional <em>packages</em> for the most basic functionality. As said the the core of the language is maintained by <em>R Development Core Team</em>, but the additional packages are developed and maintained by individual developers and research institutes. Packages in R are collections of functions and/or data that are packaged for conviniency. Installing a package broadens your the functionality of your R installation. R users often create packages for themselves, but if one thinks the package could be useful for other users too, the packages can be distributed through repositories.</p>
+<p><a href="http://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) is the &quot;official&quot; repository for contributed packages and it currently hosts 5150 packages that can be used to extend R. In last couple of years various code hosting sites as <a href="https://github.com/">GitHub</a> have become increasingly important resources especially for collaborative development of new packages. Github hosts currently rougly 1500 packages for R. Another domain spesific project is <a href="http://www.bioconductor.org/">Bioconductor</a> that provides packages for <em>for the analysis and comprehension of high-throughput genomic data</em>. Such domain spesific projects are for example <a href="http://ropensci.org/">rOpenSci</a> and <a href="http://ropengov.github.io/">rOpenGov</a> that provide tools for open science and open government data, respectively.</p>
+<h2 id="r-environment">R-environment</h2>
 <h2 id="r-language-as-a-programming-language">R-language as a programming language</h2>
-<ul>
-<li>object oriented, s-language bell laboratories (G)UI's, IDE Rstudio, git</li>
-<li>contributed packages</li>
-</ul>
-<h2 id="r-language-as-a-tools-for-statistical-computing">R-language as a tools for statistical computing</h2>
+<p>(G)UI's, IDE Rstudio, git - contributed packages</p>
+<h2 id="popularity-of-r">Popularity of R</h2>
 <ul>
 <li>structure</li>
 <li>visual</li>
@@ -394,25 +399,14 @@ pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_temp
 <ul>
 <li>enterprise level services</li>
 </ul>
-<h1 id="who-makes-the-r-possible---r-project">Who makes the R possible? - R-project</h1>
-<h2 id="organisation-of-the-project">Organisation of the project</h2>
-<ul>
-<li>development vs. user help</li>
-</ul>
-<h2 id="development-of-the-language">Development of the language</h2>
-<h2 id="user-support">User support</h2>
-<ul>
-<li>mailing lists - general vs. special interest groups blogs</li>
-<li>q &amp; a sites</li>
-</ul>
-<h2 id="contributed-packages">Contributed packages</h2>
-<ul>
-<li>CRAN - task views R-forge</li>
-<li>Github</li>
-<li>bioconductor</li>
-</ul>
-<h1 id="what-is-r-used-for---r-in-action">What is R used for? - R in action</h1>
-<p>Why R-language is popular</p>
+<blockquote>
+<p>R has already won praise and plaudits from established media outlets such as the New York Times, Forbes, Intelligent Enterprise, InfoWorld and The Register. When you consider that R is a high-level computer programming language designed mostly for quants (the nickname for a subspecies of geeks who focus on quantitative analysis), the adoring media attention seems nothing short of astounding.</p>
+</blockquote>
+<p>Joka tapauksessa <span class="citation">D. Smith (2010 s.23)</span> kirjoittaa että paska on aina paskaa.</p>
+<h1 id="learning-r">Learning R</h1>
+<p>As the internet has brought together the vast community around R and internet has become the main channel for delivering instructions for R. There are hundreds of blogs discussing specific analytical problem using R and feeds from the blogs are aggregated in <a href="http://www.r-bloggers.com/">R-bloggers</a>-website. Another, more formal channel for distributing and communicating R have become the so called massive open online courses (MOOC). MOOC work well for teaching programming and many courses in <a href="https://www.coursera.org/">Coursera</a> and <a href="https://www.edx.org/">EdX</a> have become hugely popular attracting tens of thousands of students each year. Courses of statistical programming have predominantly teached R-language on these platforms as freely licensed software is basicly the only viable alternative for teaching statiscal programming for massive crowds.</p>
+<p>Aside with vibrant internet community more and more books are being published on R. Books can be put in three categories. First are the general introductions to statitics using R. <em>Discovering Statistics Using R</em> by <span class="citation">A. Field, Miles, and Field (2012)</span> and <em>R in Action: Data Analysis and Graphics With R</em> by Robert <span class="citation">Kabacoff (2013)</span> are popular examples of that category. Second there are more and more books addressing how to solve some specific analytical problems using R. A prime examples of books in this category are <em>Complex Surveys: A Guide to Analysis Using R</em> by Thomas <span class="citation">Lumley (2011)</span>, <em>Text Analysis with R for Students of Literature</em> by Matthew <span class="citation">Jockers (forthcoming)</span>, <em>R Graphics Cookbook</em> by <span class="citation">Chang (2012)</span> and <em>Dynamic documents with R and knitr</em> by Yihui <span class="citation">Xie (2014)</span>. A third category are the books that focus on specific theoretical issue in statistics and use R as a primary language to demonstrate this. <em>Bayesian Data Analysis</em> by <span class="citation">Gelman et al. (2013)</span> and <em>Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling</em> by <span class="citation">Snijders and Bosker (2011)</span>.</p>
+<h1 id="applications-of-r">Applications of R</h1>
 <h2 id="development-of-statistical-methods">Development of statistical methods</h2>
 <ul>
 <li>new methods implemented first in R</li>
@@ -440,7 +434,17 @@ pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_temp
 <h2 id="clustering">Clustering</h2>
 <div class="references">
 <h1>References</h1>
+<p>Chang, Winston. 2012. <em>R Graphics Cookbook</em>. O’Reilly.</p>
+<p>Field, Andy, Jeremy Miles, and Zoë Field. 2012. <em>Discovering Statistics Using R</em>. SAGE.</p>
+<p>Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin. 2013. <em>Bayesian Data Analysis, Third Edition</em>. CRC Press.</p>
+<p>Jockers, Matthew. forthcoming. <em>Text Analysis with R for Students of Literature</em>. Quantitative Methods in the Humanities and Social Sciences. Springer.</p>
+<p>Kabacoff, Robert. 2013. <em>R in Action: Data Analysis and Graphics With R</em>. MANNING PUBN.</p>
 <p>King, Gary. 2014. “Restructuring the Social Sciences: Reflections from Harvards Institute for Quantitative Social Science.” <em>PS: Political Science and Politics</em> 47: 165–172. <a href="http://journals.cambridge.org/repo_A9100Nlq">http://journals.cambridge.org/repo_A9100Nlq</a>.</p>
+<p>Lumley, Thomas. 2011. <em>Complex Surveys: A Guide to Analysis Using R</em>. John Wiley &amp; Sons.</p>
+<p>Smith, David. 2010. “R Is Hot - How Did a Statistical Programming Language Invented in New Zealand Become a Global Sensation?” Revolution Analytics.</p>
+<p>Snijders, Tom A. B., and Roel Bosker. 2011. <em>Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling</em>. Second Edition. Sage Publications Ltd.</p>
+<p>Venables, William N., David M. Smith, and R. Development Core Team. 2013. <em>An Introduction to R</em>. Network Theory. <a href="http://www.math.vu.nl/sto/onderwijs/statlearn/R-Binder.pdf">http://www.math.vu.nl/sto/onderwijs/statlearn/R-Binder.pdf</a>.</p>
+<p>Xie, Yihui. 2014. <em>Dynamic Documents with R and Knitr</em>. Boca Ratón [etc.: CRC Press.</p>
 </div>
 </body>
 </html>
