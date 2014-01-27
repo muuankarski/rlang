@@ -13,6 +13,9 @@ cd ~/workspace/openscience/digihist
 pandoc -s r_lang.md -o r_lang.html --toc --filter pandoc-citeproc -H ~/workspace/web/css/rmarkdown.css
 
 pandoc r_lang.md -o r_lang.pdf --toc --number-sections --filter pandoc-citeproc
+pandoc r_lang.md -o r_lang.odt --toc --number-sections --filter pandoc-citeproc
+pandoc r_lang.md -o r_lang.docx --toc --number-sections --filter pandoc-citeproc
+pandoc r_lang.md -o r_lang.rtf --toc --number-sections --filter pandoc-citeproc
 #
 pandoc r_lang.md -o r_lang.pdf --template=../../template/pandoc_article/tex_templates/pandoc.latex.template --number-sections --toc --latex-engine=xelatex -V lang=english -V papersize:a4paper -V documentclass=scrartcl
 
