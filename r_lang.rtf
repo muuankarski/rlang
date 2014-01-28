@@ -2,108 +2,172 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 R-language for statistical computing and visualization in social sciences and humanities\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \b \fs36 Open research methods in computational social sciences and humanities: introducing R\par}
 {\pard \qc \f0 \sa180 \li0 \fi0  Markus Kainu\par}
 {\pard \qc \f0 \sa180 \li0 \fi0  January 23, 2014\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Contents\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Introduction - Open Research Methods\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab What is R?\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Structure of R-project\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab R-environment\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab R-language as a programming language\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Popularity of R\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Popularity of R-language\sa180\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Using R-language\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Learning the language\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Applications of R\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab User examples\sa180\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Summing it up\sa180\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab R user-interfaces\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Structure of R-project\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Learning the language\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Use of R language\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Conclusions\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Introduction - Open Research Methods\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The use of open research methods has received a lot less attention due to obvious reason.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Firstly, research methods in SSH have been predominantly qualitative meaning that the software has played a supporting role in the analytical process. Second, the quantitative fields of SSH have mostly used survey and other, often closed, tailor-made research data that is well suited for analysis of custom statistical tools as SPSS, Stata or Excel. However, the future looks somewhat different as the quantity and multiplicity of sources of digital data are challeging both traditional approaches in SSH, the purely qualitative approach and custom tools approach in quantitative analysis.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 As relevant data for SSH is being generated and published in multiple sites and as the data is often messy and big in size this development calls for flexible tools that can be tailored and modified for the particular data and research question. The custom proprietary tools that are well fitted for analysis of survey, register and statistical data\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Proprietary software vendors cannot keep up with this development and therefore we have witnessed an unseen growth in userbase and developers of free and open source computational research methods. And it is not only that there are no proprietary software for these purposes, but the open research methods are also required becaused of\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 As Gary King (2014) describes it:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The debate on open science in the context of Social sciences and humanities (SSH) has been predominantly focusing on open access to research publication and opening up the various types of digital research data (open research data). The openness of research methods has received a lot less attention.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I can think of at least two reasons for that. On the one hand, research methods in SSH have been predominantly qualitative where software has played only a supporting role. Such research methods, let's take {\i discourse analysis}, have always been open. On the other hand, the quantitative fields of SSH have mostly used survey, register, statistics and other, often closed, tailor-made data that custom statistical tools such as SPSS, Stata or Excel are well suited for. However, the future of SHH looks somewhat different as the quantity and multiplicity of sources of digital data are challeging both traditional approaches in SSH, the purely qualitative approach and custom tools approach in quantitative analysis. As Gary King (2014) describes it:\par}
 {\pard \ql \f0 \sa180 \li720 \fi0 An important driver of the change sweeping the field is the enormous quantities of highly informative data inundating almost every area we study. In the last half-century, the information base of social science research has primarily come from three sources: survey research, end-of-period government statistics, and one-off studies of particular people, places, or events. In the next half-century, these sources will still be used and improved, but the number and diversity of other sources of information are increasing exponentially and are already many orders of magnitude more informative than ever before.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 As the role of software and computation in the research process is becomes more important, the questions of licensing, ownership, modification and distribution of that software become increasingly important, too. This chapter will introduce one viable option for analysing your data with called R.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 What is R?\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The name R comes from the first names of two New Zealand statisticians Ross Ihaka and Robert Gentleman who created the language in late 1990's. R can be regarded as an implementation of the S language which was developed at Bell Laboratories in 70's by Rick Becker, John Chambers and Allan Wilks (Venables, Smith, and Team 2013). Currently the development of R language is run by {\i R Development Core Team} that Chambers is a member of.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 R is one of the most popular platforms for data analysis and visualization currently available. R is distributed under the terms of the {\i GNU General Public License} so it is free and open source and it can be distributed under those conditions. R runs in Windows, Mac OS X and GNU/Linux operating systems on local computer, but a different server implementations are becoming increasingly popular.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 R is an object-oriented programming language which means that unlike in SPSS or SAS that give you abundant information on particular model you implement, R only creates a {\i fit object} in memory that can be used in subsequent analysis. This structure of R guides the user to implement the data-analysis as stepwise process which is very useful when solving complex research problems using complex and messy data that is often the case in contemporary computational SSH research.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Structure of R-project\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "http://www.r-project.org/"}}{\fldrslt{\ul
-The R Project for Statistical Computing
-}}}
-\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b Organisation of the project}\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab development vs. user help\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b Development of the language}\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 R installation consists of so called {\i base installation} that includes the core with some 25 additional {\i packages} for the most basic functionality. As said the the core of the language is maintained by {\i R Development Core Team}, but the additional packages are developed and maintained by individual developers and research institutes. Packages in R are collections of functions and/or data that are packaged for conviniency. Installing a package broadens your the functionality of your R installation. R users often create packages for themselves, but if one thinks the package could be useful for other users too, the packages can be distributed through repositories.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 R is one of the most popular platforms for data analysis and visualization currently available. R is distributed under the terms of the {\i GNU General Public License} so it is free and open source and it can be distributed under those conditions. R is available from {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/"}}{\fldrslt{\ul
 Comprehensive R Archive Network
 }}}
- (CRAN) is the "official" repository for contributed packages and it currently hosts 5150 packages that can be used to extend R. In last couple of years various code hosting sites as {\field{\*\fldinst{HYPERLINK "https://github.com/"}}{\fldrslt{\ul
+ (CRAN). The name R comes from the first names of two New Zealand statisticians Ross Ihaka and Robert Gentleman who created the language in late 1990's.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 R can be regarded as an implementation of the S language which was developed at Bell Laboratories in 70's by Rick Becker, John Chambers and Allan Wilks (Venables, Smith, and Team 2013). R is an object-oriented programming language which means that unlike in SPSS or SAS that give you abundant information on particular model you implement, R only creates a {\i fit object} in memory that can be used in subsequent analysis. This structure of R directs the user to implement the data-analysis as stepwise process which becomes very useful later on when solving complex research problems using vast and messy data typical for emerging computational SSH research.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 R user-interfaces\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 R runs in Windows, Mac OS X and GNU/Linux operating systems on local computer, but a different server implementations are becoming increasingly popular, such as {\field{\*\fldinst{HYPERLINK "http://www.r-fiddle.org/#/"}}{\fldrslt{\ul
+R-Fiddle
+}}}
+ or {\field{\*\fldinst{HYPERLINK "http://ramnathv.github.io/rNotebook/"}}{\fldrslt{\ul
+rnotebook
+}}}
+. The most basic user interface for R is {\i console}, which allows user to type in commands and outputs the results of the analysis. If the results is a plot a pop-up graphical windows is opened. There are several graphicsl user interfaces (GUI) in R that may be helpful in the beginning, like {\field{\*\fldinst{HYPERLINK "http://www.rcommander.com/"}}{\fldrslt{\ul
+RCommander
+}}}
+ or {\field{\*\fldinst{HYPERLINK "http://www.deducer.org/"}}{\fldrslt{\ul
+Deducer
+}}}
+. Perhaps the most productive way for using R is through a {\field{\*\fldinst{HYPERLINK "http://www.sciviews.org/_rgui/projects/Editors.html"}}{\fldrslt{\ul
+integrated development environment
+}}}
+ (IDE) that provide the user, in addition to console, several useful functionalities for controlling the whole research project. {\field{\*\fldinst{HYPERLINK "http://www.rstudio.com/ide/download/"}}{\fldrslt{\ul
+RStudio
+}}}
+ has gained a lot of popularity in last couple of years and is also my personal favourite IDE. It combines the console with script editor, plot browser, file browser and environment window. If the user uses plain text (latex or markdown) for typesetting the texts, RStudio has a tailored text editor and support for version control either in {\field{\*\fldinst{HYPERLINK "http://git-scm.com/"}}{\fldrslt{\ul
+git
+}}}
+ or in {\field{\*\fldinst{HYPERLINK "http://subversion.tigris.org/"}}{\fldrslt{\ul
+subversion
+}}}
+. In addition, RStudio has native support for html-based presentation graphics using {\field{\*\fldinst{HYPERLINK "http://lab.hakim.se/reveal-js/#/"}}{\fldrslt{\ul
+reveal.js
+}}}
+-framework. All these operations makes it possible to squeeze the whole research process within a single software environments from planning to publishing. Rstudio can also be run on a remote server through web browser. The RStudio company has another exciting open source tool for R called {\field{\*\fldinst{HYPERLINK "http://www.rstudio.com/shiny/"}}{\fldrslt{\ul
+{\i shiny}
+}}}
+ that can be used for creating interactive web applications such as this {\field{\*\fldinst{HYPERLINK "http://glimmer.rstudio.com/muuankarski/QogCorr/"}}{\fldrslt{\ul
+experimental gadget of mine
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Structure of R-project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 For someone new to R, the peculiar structure of the language creates a very steep learning curve. Same applies to learning how the whole project is organised.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Official name {\field{\*\fldinst{HYPERLINK "http://www.r-project.org/"}}{\fldrslt{\ul
+The R Project for Statistical Computing
+}}}
+ refers both to the centrally maintained core as well as R's distributed structure of contributed extensions, called {\i packages}. Packages in R are collections of functions and/or data that are packaged for conviniency. Installing a package broadens your the functionality of your R installation. Basic R installation consists of so called {\i base installation} that includes the core with some 25 additional {\i packages} for the most basic functionality. The core of the language is maintained by {\i R Development Core Team}, but the additional packages are developed and maintained by individual developers and research institutes. R users often create packages for themselves, but if one thinks the package could be useful for other users too, the packages can be distributed through repositories.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 CRAN is the "official" repository for contributed packages and currently hosts 5150 packages that can be used to extend R. In the last couple of years various code hosting sites such as {\field{\*\fldinst{HYPERLINK "https://github.com/"}}{\fldrslt{\ul
 GitHub
 }}}
- have become increasingly important resources especially for collaborative development of new packages. Github hosts currently rougly 1500 packages for R. Another domain spesific project is {\field{\*\fldinst{HYPERLINK "http://www.bioconductor.org/"}}{\fldrslt{\ul
+ have become increasingly important resources especially for collaborative development of new packages. Github hosts currently rougly 1500 packages for R. {\field{\*\fldinst{HYPERLINK "http://www.bioconductor.org/"}}{\fldrslt{\ul
 Bioconductor
 }}}
- that provides packages for {\i for the analysis and comprehension of high-throughput genomic data}. Such domain spesific projects are for example {\field{\*\fldinst{HYPERLINK "http://ropensci.org/"}}{\fldrslt{\ul
+ is another separate package repository, but can be regarded as {\i domain spesific} for it hosts packages {\i for the analysis and comprehension of high-throughput genomic data}. Other such domain spesific projects are for example {\field{\*\fldinst{HYPERLINK "http://ropensci.org/"}}{\fldrslt{\ul
 rOpenSci
 }}}
- and {\field{\*\fldinst{HYPERLINK "http://ropengov.github.io/"}}{\fldrslt{\ul
+ and emerging {\field{\*\fldinst{HYPERLINK "http://ropengov.github.io/"}}{\fldrslt{\ul
 rOpenGov
 }}}
  that provide tools for open science and open government data, respectively.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 R-environment\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 R-language as a programming language\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 (G)UI's, IDE Rstudio, git - contributed packages\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Popularity of R\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab structure\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab visual\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab open source, community, licensing, teaching\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Popularity of R-language\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab enterprise level services\sa180\par}
-{\pard \ql \f0 \sa180 \li720 \fi0 R has already won praise and plaudits from established media outlets such as the New York Times, Forbes, Intelligent Enterprise, InfoWorld and The Register. When you consider that R is a high-level computer programming language designed mostly for quants (the nickname for a subspecies of geeks who focus on quantitative analysis), the adoring media attention seems nothing short of astounding.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Joka tapauksessa D. Smith (2010 s.23) kirjoittaa ett\u228? paska on aina paskaa.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Using R-language\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Learning the language\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 {\b User support}\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab mailing lists - general vs. special interest groups blogs\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab q & a site\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 As the internet has brought together the vast community around R and internet has become the main channel for delivering instructions for R. There are hundreds of blogs discussing specific analytical problem using R and feeds from the blogs are aggregated in {\field{\*\fldinst{HYPERLINK "http://www.r-bloggers.com/"}}{\fldrslt{\ul
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Learning the language\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 As the internet has brought together the vast community around R and internet has become the main channel for delivering instructions for R. The official {\i Introduction to R} by Venables, Smith, and Team (2013) is an important document to master when getting into the language. Besides this general introduction R-project has also a domain spesific structure where you can start learning from so called {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/web/views/"}}{\fldrslt{\ul
+task views
+}}}
+. For SSH researcher the {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/web/views/SocialSciences.html"}}{\fldrslt{\ul
+social sciences
+}}}
+ and {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/web/views/NaturalLanguageProcessing.html"}}{\fldrslt{\ul
+natural language processing
+}}}
+ task views are good places to begin with.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Discussions and announcement on R happen mainly through {\field{\*\fldinst{HYPERLINK "http://www.r-project.org/mail.html"}}{\fldrslt{\ul
+R official mailing lists
+}}}
+ that have their own lists for development and user help. {\field{\*\fldinst{HYPERLINK "https://stat.ethz.ch/mailman/listinfo/r-help"}}{\fldrslt{\ul
+R help
+}}}
+ is the main list for general help and receives tens of mails per day. Most of the individual packages have their own mailing list for development where anyone can join if wanting to contribute to the packages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The official mailing lists have recently been challenged by so called Question & Answer -sites like {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/tagged/r"}}{\fldrslt{\ul
+Stack Overflow
+}}}
+ in delivering solutions for one-off user questions. Stack Overflow has currently almost 47000 questions tagged with R. In comparison to proprietary software, there are 2014 questions tagged with SAS, 616 with Stata and 362 SPSS. These figures are used as one indicator of the {\field{\*\fldinst{HYPERLINK "http://r4stats.com/articles/popularity/"}}{\fldrslt{\ul
+increasing popularity of R
+}}}
+. Besides the Question & Answer sites, there are hundreds of blogs discussing specific analytical problem using R and feeds from the blogs are aggregated in {\field{\*\fldinst{HYPERLINK "http://www.r-bloggers.com/"}}{\fldrslt{\ul
 R-bloggers
 }}}
--website. Another, more formal channel for distributing and communicating R have become the so called massive open online courses (MOOC). MOOC work well for teaching programming and many courses in {\field{\*\fldinst{HYPERLINK "https://www.coursera.org/"}}{\fldrslt{\ul
+-website.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Another, more formal channel for distributing and communicating R have become the so called massive open online courses (MOOC). MOOCs seem to work well for teaching programming and many courses in {\field{\*\fldinst{HYPERLINK "https://www.coursera.org/"}}{\fldrslt{\ul
 Coursera
 }}}
  and {\field{\*\fldinst{HYPERLINK "https://www.edx.org/"}}{\fldrslt{\ul
 EdX
 }}}
- have become hugely popular attracting tens of thousands of students each year. Courses of statistical programming have predominantly teached R-language on these platforms as freely licensed software is basicly the only viable alternative for teaching statiscal programming for massive crowds.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Aside with vibrant internet community more and more books are being published on R. Books can be put in three categories. First are the general introductions to statitics using R. {\i Discovering Statistics Using R} by A. Field, Miles, and Field (2012) and {\i R in Action: Data Analysis and Graphics With R} by Robert Kabacoff (2013) are popular examples of that category. Second there are more and more books addressing how to solve some specific analytical problems using R. A prime examples of books in this category are {\i Complex Surveys: A Guide to Analysis Using R} by Thomas Lumley (2011), {\i Text Analysis with R for Students of Literature} by Matthew Jockers (forthcoming), {\i R Graphics Cookbook} by Chang (2012) and {\i Dynamic documents with R and knitr} by Yihui Xie (2014). A third category are the books that focus on specific theoretical issue in statistics and use R as a primary language to demonstrate this. {\i Bayesian Data Analysis} by Gelman et al. (2013) and {\i Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling} by Snijders and Bosker (2011).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Applications of R\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Development of statistical methods\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab new methods implemented first in R\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Applied statistics\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bio/geo-sciences\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Geograhical Information Systems\sa180\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Social sciences/economics\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Humanities - analysis of natural languages\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Business/enterprise analytics\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab insurance, big data, banking, industry\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab social media: facebook, google, twitter\sa180\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Data journalism\par}
-{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Guardian, New York Times, Chicago Herald Tribune\sa180\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 User examples\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Word clouds\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Networks maps\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Topic modelling\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Spatial visualisation\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Clustering\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Summing it up\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Some alternatives\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The importance of (free & open) licensing in scientific work\par}
+ have become hugely popular attracting tens of thousands of students each year. The free licensing of R has made it primary language on these coursesas it is basicly the only viable alternative for teaching statistical programming for massive crowds.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Aside with vibrant internet community more and more books are being published on R. Books can be put in three categories. First are the general introductions to statitics using R. {\i Discovering Statistics Using R} by A. Field, Miles, and Field (2012) and {\i R in Action: Data Analysis and Graphics With R} by Robert Kabacoff (2013) are popular examples of that category. Second there are more and more books addressing how to solve some specific analytical problems using R. A prime examples of books in this category are {\i Complex Surveys: A Guide to Analysis Using R} by Thomas Lumley (2011), {\i Text Analysis with R for Students of Literature} by Matthew Jockers (forthcoming), {\i R Graphics Cookbook} by Chang (2012) and {\i Dynamic documents with R and knitr} by Yihui Xie (2014). A third category are the books that focus on specific theoretical issue in statistics and use R as a primary language to demonstrate this. Such books are for instance {\i Bayesian Data Analysis} by Gelman et al. (2013) or {\i Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling} by Snijders and Bosker (2011).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Use of R language\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Throughout it's existence the main use of R has been implementation of new statistical methods. This is still the case and implementations of new statistical methods are usually first available in R. However, applied statistics have become more and more important area of expansion as researchers from fields that apply statistical methods have started to migrate into R. {\i Bioconductor} was already mentioned as an example of a domain spesific initiative to apply R in their analysis, for genome data in this case. Natural sciences in general have been early adopters and for example in Geographical Information Systems (GIS) the R has started rival proprietary GIS-software. In this case for example it is possible to combine traditional statistical methods and geographic data in one environment. In SSH this may be of useful as there are a lot of spatial data available and you may want run cluster thematically, but also visualize as maps. Matthew Jockers (forthcoming) book is one of the few attemps to foster use of R in humanities. In digital humanities blogoshpere there are few others besides {\field{\*\fldinst{HYPERLINK ""}}{\fldrslt{\ul
+Jockers blog
+}}}
+ that are worth reading, namely {\field{\*\fldinst{HYPERLINK "http://wcm1.web.rice.edu/index.html"}}{\fldrslt{\ul
+W. Caleb McDaniel from Rice University
+}}}
+ and {\field{\*\fldinst{HYPERLINK "http://quantifyingmemory.blogspot.com/"}}{\fldrslt{\ul
+Quantifying Memory blog by Rolf Fredheim from Cambridge
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Addition to academic applications R has become a major player in business analytics. This is largely due to companies as {\field{\*\fldinst{HYPERLINK "http://www.revolutionanalytics.com/"}}{\fldrslt{\ul
+Revolution Analytics
+}}}
+ that have started proving consultation and creating proprietary application for enterprise needs. Annual {\field{\*\fldinst{HYPERLINK "http://www.rinfinance.com/"}}{\fldrslt{\ul
+R/Finance 2014
+}}}
+-conference gives nice overview of adoption of R in banking and insurance sectors. For example {\field{\*\fldinst{HYPERLINK "https://plus.google.com/+ResearchatGoogle/posts/em2i7TEpHgj"}}{\fldrslt{\ul
+Google
+}}}
+ uses R in-house and also provides packages as {\field{\*\fldinst{HYPERLINK "http://code.google.com/p/r-google-analytics/"}}{\fldrslt{\ul
+r-google-analytics
+}}}
+ or {\field{\*\fldinst{HYPERLINK "http://code.google.com/p/google-motion-charts-with-r/"}}{\fldrslt{\ul
+rgooglevis
+}}}
+. One emerging fiels is so called data journalism where major players as {\field{\*\fldinst{HYPERLINK "http://blog.revolutionanalytics.com/2011/03/how-the-new-york-times-uses-r-for-data-visualization.html"}}{\fldrslt{\ul
+New York Times
+}}}
+ or {\field{\*\fldinst{HYPERLINK "http://cran.r-project.org/web/packages/GuardianR/index.html"}}{\fldrslt{\ul
+Guardian
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Conclusions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 R is not the only alternative for proprietary software. {\field{\*\fldinst{HYPERLINK "http://www.python.org/"}}{\fldrslt{\ul
+Python
+}}}
+ is another viable option especially for someone looking for more general purpose language that also masters data analysis. {\field{\*\fldinst{HYPERLINK "http://readwrite.com/2013/11/25/python-displacing-r-as-the-programming-language-for-data-science#awesm=~ouemDFJ542FxpR"}}{\fldrslt{\ul
+Whether python is going to displace R
+}}}
+ has recently been debated in data science blogosphere as the data is becoming mainstream, but R is still remaining hard to learn and programmers rather want to extend the language they already know rather than learn a new one. For very intensive computation {\field{\*\fldinst{HYPERLINK "http://julialang.org/"}}{\fldrslt{\ul
+Julia
+}}}
+ is becoming popular open source option, too. It is still in early phase of development, but is already viable option if processing time is important.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 However, for scientific work I would emphasize the licensing of the software more than the name of the technology. It may be that the recent buzz around digital data in SSH marks only the beginning of the data intensive research and for someone wanting to success in that game it will be equally important to develop the subtantial understanding as well as technological understanding to get grisp of the new emerging tools. R is a prime example of this development where academics have taken a major role in software development and created tools that suit better for many contemporary research problems than proprietary software. This development may well go on and therefore it is advisable for someone who is interested in learning this techniques to carefully look at the licensing before investing time and effort in learning the tools. Free and open source tools are great in this respect as once you pick up the skills to use the product, you will soon find that it should be improved for your purposes. You can learn how the code works, write improvements and then publish them for the community. In addition, free licensing also allows you to teach the use of the software and distribute it. Open source research software is not always the easiest and quickest way to get job done, but in the long run they are often worth the time invested.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finally, the openness of the computation research methods is important from the reproducibility of your research. Along with demands for open access of research publications there are tendencies that more and more journals in computational sciences will require both the data and algorithms behind the results to published together with the article. As SSH scholars are moving towards computational analysis this issue of reproducibility should also be considered in choosing tools. R is a great tool that fullfills all these conditions, but are several other out there, too. After all, it is not necessary for all to become software developers, but to have basic understanding and pair with developers who know more.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Steve Lohr (2013) interviewed some leading digital humanists in New York Times article {\i Literary History, Seen Through Big Data\u8217's Lens} on the future of social sciences posed a question whether these emerging computational technologies will undermine the role qualitative research in SHH. Matthew Jocker emphasized that finding the right questions and flaws in the analysis still require deep understanding of the field:\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 "You'll always need both," says Mr. Jockers, the literary quant. \u8220"But we\u8217're at a moment now when there is much greater acceptance of these methods than in the past. There will come a time when this kind of analysis is just part of the tool kit in the humanities, as in every other discipline.\u8221"\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 Quantitative tools in the humanities and the social sciences, as in other fields, are most powerful when they are controlled by an intelligent human. Experts with deep knowledge of a subject are needed to ask the right questions and to recognize the shortcomings of statistical models.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Also professor Gary (King 2014) from Harvard claims that this development is requires new kind of cooperation between scholars and fields of research as the analysis of large digital data requires skills that can't be found from traditional fields of social sciences.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 Through collaboration across fields, however, we can begin to address the interdisciplinary substantive knowledge needed, along with the engineering, computational, ethical, and informatics challenges before us. (King 2014)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 In addition, King (2014) assumes that this deveploment will blur the dichotomy between qualitative and quantitative analysis and he sees a future where both traditions have merged into social sciences where the old problems are solved in collaboration.\par}
+{\pard \ql \f0 \sa180 \li720 \fi0 Instead of quantitative researchers trying to build fully automated methods and qualitative researchers trying to make due with traditional human-only methods, both now are heading toward, using, or developing computer-assisted methods that empower both groups. This development has the potential to end the divide, to get us working together to solve common problems, and to greatly strengthen the research output of social science as a whole.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 References\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Chang, Winston. 2012. {\i R Graphics Cookbook}. O\u8217'Reilly.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Field, Andy, Jeremy Miles, and Zo\u235? Field. 2012. {\i Discovering Statistics Using R}. SAGE.\par}
@@ -114,8 +178,11 @@ EdX
 http://journals.cambridge.org/repo_A9100Nlq
 }}}
 .\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Lohr, Steve. 2013. \u8220"Literary History, Seen Through Big Data\u8217's Lens.\u8221" {\i The New York Times} (January). {\field{\*\fldinst{HYPERLINK "http://www.nytimes.com/2013/01/27/technology/literary-history-seen-through-big-datas-lens.html"}}{\fldrslt{\ul
+http://www.nytimes.com/2013/01/27/technology/literary-history-seen-through-big-datas-lens.html
+}}}
+.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Lumley, Thomas. 2011. {\i Complex Surveys: A Guide to Analysis Using R}. John Wiley & Sons.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Smith, David. 2010. \u8220"R Is Hot - How Did a Statistical Programming Language Invented in New Zealand Become a Global Sensation?\u8221" Revolution Analytics.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Snijders, Tom A. B., and Roel Bosker. 2011. {\i Multilevel Analysis: An Introduction to Basic and Advanced Multilevel Modeling}. Second Edition. Sage Publications Ltd.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Venables, William N., David M. Smith, and R. Development Core Team. 2013. {\i An Introduction to R}. Network Theory. {\field{\*\fldinst{HYPERLINK "http://www.math.vu.nl/sto/onderwijs/statlearn/R-Binder.pdf"}}{\fldrslt{\ul
 http://www.math.vu.nl/sto/onderwijs/statlearn/R-Binder.pdf
