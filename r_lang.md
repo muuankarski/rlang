@@ -1,7 +1,7 @@
 ---
 title:  'Open research methods in computational social sciences and humanities: introducing R'
 author: Markus Kainu
-date: January 23, 2014
+date: January 29, 2014
 affiliation: University of Turku
 tags: [r-language, open science]
 bibliography: bibtex.bib
