@@ -1,9 +1,5 @@
 # Current versions rendered here as:
 
-- [in html](https://rawgithub.com/muuankarski/rlang/master/r_lang.html)
-- [in pdf](https://rawgithub.com/muuankarski/rlang/master/r_lang.pdf)
-- [in odt](https://rawgithub.com/muuankarski/rlang/master/r_lang.odt)
-- [in docx](https://rawgithub.com/muuankarski/rlang/master/r_lang.docx)
-- [in rtf](https://rawgithub.com/muuankarski/rlang/master/r_lang.rtf)
-- [in epub](https://rawgithub.com/muuankarski/rlang/master/r_lang.epub)
+- [in html](https://cdn.rawgit.com/muuankarski/rlang/c54459f5/rlang.html)
+- [in pdf](https://github.com/muuankarski/rlang/blob/master/rlang.pdf)
 

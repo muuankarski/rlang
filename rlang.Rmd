@@ -4,11 +4,11 @@ author: Markus Kainu
 date: "`r Sys.time()`"
 affiliation: "National Social insurance institution of Finland (Kela)"
 tags: [r-language, open science]
-output: html_document
-# output: 
-  # tint::tintPdf: 
-  #   citation_package: natbib
-  #   latex_engine: pdflatex
+# output: html_document
+output:
+tint::tintPdf:
+  citation_package: natbib
+  latex_engine: pdflatex
 bibliography: bibtex.bib
 lang: english
 ...
